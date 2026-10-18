@@ -1,0 +1,132 @@
+/* ==========================================================================
+   ÉPHÉMÈRE DESIGN SYSTEM — HAUTE BOTANIQUE TOKENS
+   Aesthetic: Editorial Avant-Garde & Moody Botanical Art
+   Philosophy: Organic Sensorial Craft & Emil Kowalski Spring Physics
+   ========================================================================== */
+
+:root {
+  /* ------------------------------------------------------------------------
+     Tier 1: Primitives (Botanical Mineral Palette)
+     ------------------------------------------------------------------------ */
+  --primitive-alabaster: #FAF8F5;
+  --primitive-chalk: #F4EFEB;
+  --primitive-parchment: #ECE6DD;
+  --primitive-lichen-50: #EBEFEA;
+  --primitive-lichen-100: #D8E0D7;
+  --primitive-lichen-300: #9AA798;
+  --primitive-lichen-800: #2C352B;
+  --primitive-lichen-950: #141713;
+
+  --primitive-peony-900: #2A0B11;
+  --primitive-peony-800: #42121B;
+  --primitive-peony-700: #5C1A26;
+  --primitive-peony-500: #8A2A3C;
+  --primitive-peony-200: #E8CCD2;
+
+  --primitive-saffron-500: #D49A3D;
+  --primitive-saffron-400: #E6B05C;
+  --primitive-saffron-100: #FBF1DE;
+
+  --primitive-charcoal: #181A18;
+  --primitive-smoke: #5F635D;
+  --primitive-ash: #8F948C;
+  --primitive-mist: #D5D9D3;
+
+  /* ------------------------------------------------------------------------
+     Tier 2: Semantics (Contextual Material & Surface)
+     ------------------------------------------------------------------------ */
+  --bg-page: var(--primitive-alabaster);
+  --bg-surface: rgba(255, 255, 255, 0.88);
+  --bg-surface-warm: rgba(244, 239, 235, 0.82);
+  --bg-surface-tint: rgba(235, 239, 234, 0.78);
+  --bg-dark-editorial: var(--primitive-lichen-950);
+  --bg-peony-deep: var(--primitive-peony-900);
+
+
+  --border-hairline: rgba(20, 23, 19, 0.08);
+  --border-subtle: rgba(20, 23, 19, 0.14);
+  --border-active: var(--primitive-peony-700);
+  --border-saffron: var(--primitive-saffron-500);
+
+  --text-primary: var(--primitive-charcoal);
+  --text-secondary: var(--primitive-smoke);
+  --text-muted: var(--primitive-ash);
+  --text-on-dark: #FAF8F5;
+  --text-on-dark-muted: #B4B9B1;
+
+  --accent-botanical: var(--primitive-peony-700);
+  --accent-pollen: var(--primitive-saffron-500);
+  --accent-moss: var(--primitive-lichen-800);
+
+  /* ------------------------------------------------------------------------
+     Tier 3: Typography System
+     ------------------------------------------------------------------------ */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-subdisplay: 'Italiana', serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+
+  /* ------------------------------------------------------------------------
+     Tier 4: Emil Kowalski Motion Physics & Easing Curves
+     ------------------------------------------------------------------------ */
+  --ease-snappy: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-exit: cubic-bezier(0.7, 0, 1, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --duration-instant: 90ms;
+  --duration-fast: 160ms;
+  --duration-normal: 240ms;
+  --duration-slow: 380ms;
+
+  /* ------------------------------------------------------------------------
+     Tier 5: Organic Radii & Spacing Grid
+     ------------------------------------------------------------------------ */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-oval: 120px;
+  --radius-full: 9999px;
+
+  --shadow-editorial: 0 12px 36px -8px rgba(20, 23, 19, 0.07);
+  --shadow-elevated: 0 24px 64px -12px rgba(20, 23, 19, 0.12);
+  --shadow-loupe: 0 20px 50px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.6);
+
+  /* ------------------------------------------------------------------------
+     Tier 6: Artistic Botanical Pigments & Interactive Aura
+     ------------------------------------------------------------------------ */
+  --pigment-peony-blush: #F7E4E7;
+  --pigment-peony-core: #5C1A26;
+  --pigment-rose-crimson: #B32638;
+  --pigment-rose-glow: rgba(179, 38, 56, 0.16);
+  --pigment-anthurium-obsidian: #3A262C;
+  --pigment-anthurium-glow: rgba(58, 38, 44, 0.14);
+  --pigment-ikebana-sage: #4E6850;
+  --pigment-ikebana-glow: rgba(78, 104, 80, 0.16);
+  --pigment-poppy-saffron: #D48E2E;
+  --pigment-poppy-glow: rgba(212, 142, 46, 0.18);
+  --pigment-blue-poppy-azure: #2C6E98;
+  --pigment-blue-poppy-glow: rgba(44, 110, 152, 0.18);
+  --pigment-camellia-alabaster: #697F6E;
+  --pigment-camellia-glow: rgba(105, 127, 110, 0.15);
+  --pigment-dahlia-burgundy: #6E1535;
+  --pigment-dahlia-glow: rgba(110, 21, 53, 0.18);
+  --pigment-waterlily-jade: #2D6B5E;
+  --pigment-waterlily-glow: rgba(45, 107, 94, 0.16);
+
+  /* Active Live Theme Variables (dynamically controlled by JS) */
+  --ambient-aura-primary: rgba(220, 160, 172, 0.18);
+  --ambient-aura-secondary: rgba(165, 195, 175, 0.15);
+  --ambient-aura-accent: rgba(245, 205, 140, 0.16);
+  --ambient-focal-x: 50%;
+  --ambient-focal-y: 20%;
+  --card-active-glow: rgba(92, 26, 38, 0.18);
+
+  /* Museum Frame Styling */
+  --frame-matting-bg: #FAF7F2;
+  --frame-gold-hairline: rgba(212, 154, 61, 0.38);
+  --frame-gold-bright: #E6B05C;
+  --frame-corner-color: #8C6A38;
+}
+

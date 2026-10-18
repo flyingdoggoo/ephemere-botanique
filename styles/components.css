@@ -1,0 +1,1941 @@
+/* ==========================================================================
+   ÉPHÉMÈRE COMPONENT SYSTEM — REFINED HAUTE EDITORIAL
+   Design Philosophy: Emil Kowalski Micro-Interactions & Sensory Floral Craft
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Floating Haute Editorial Masthead (The Anti-Corporate Navigation)
+   -------------------------------------------------------------------------- */
+.floating-masthead {
+  position: fixed;
+  top: clamp(0.6rem, 1.5vh, 1.25rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1080px, 94vw);
+  z-index: 1000;
+  background: rgba(250, 248, 245, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(212, 154, 61, 0.22);
+  border-radius: var(--radius-full);
+  box-shadow: 0 8px 32px -4px rgba(20, 23, 19, 0.05), 0 0 0 1px rgba(255, 255, 255, 0.75) inset;
+  padding: clamp(0.4rem, 0.9vh, 0.65rem) clamp(1rem, 1.8vw, 1.75rem);
+  transition: transform var(--duration-fast) var(--ease-snappy),
+              border-color var(--duration-fast) ease,
+              background-color var(--duration-fast) ease,
+              box-shadow var(--duration-fast) ease;
+}
+
+.masthead-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.masthead-brand {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.4rem, 0.8vw, 0.75rem);
+}
+
+.masthead-seal {
+  width: clamp(20px, 1.8vw, 26px);
+  height: clamp(20px, 1.8vw, 26px);
+  color: var(--accent-botanical);
+  transition: transform var(--duration-normal) var(--ease-spring);
+}
+
+.masthead-brand:hover .masthead-seal {
+  transform: rotate(45deg);
+}
+
+.masthead-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.25vw, 1.25rem);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.masthead-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 1.4vw, 1.75rem);
+}
+
+.masthead-link {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(0.82rem, 1vw, 1.02rem);
+  color: var(--text-secondary);
+  transition: color var(--duration-fast) ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.masthead-link:hover {
+  color: var(--accent-botanical);
+}
+
+.masthead-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--accent-botanical);
+  transform: scaleX(0);
+  transition: transform var(--duration-fast) var(--ease-snappy);
+  transform-origin: right center;
+}
+
+.masthead-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+@media (max-height: 780px) {
+  .floating-masthead {
+    top: 0.6rem;
+    padding: 0.35rem 1.25rem;
+  }
+}
+
+@media (max-width: 1060px) {
+  .masthead-links {
+    gap: 0.85rem;
+  }
+  .masthead-link {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .masthead-links {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Buttons & Editorial Controls
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-xs);
+  transition: transform var(--duration-instant) var(--ease-snappy),
+              background-color var(--duration-fast) ease,
+              border-color var(--duration-fast) ease,
+              color var(--duration-fast) ease,
+              box-shadow var(--duration-fast) ease;
+  will-change: transform;
+}
+
+.btn:active {
+  transform: scale(0.97); /* Emil Kowalski rule */
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent-pollen);
+  outline-offset: 3px;
+}
+
+.btn-botanical-dark {
+  background-color: var(--primitive-lichen-950);
+  color: var(--primitive-alabaster);
+  border: 1px solid var(--primitive-lichen-950);
+}
+
+.btn-botanical-dark:hover {
+  background-color: var(--primitive-peony-800);
+  border-color: var(--primitive-peony-800);
+  box-shadow: 0 8px 24px -4px rgba(66, 18, 27, 0.35);
+}
+
+.btn-botanical-peony {
+  background-color: var(--primitive-peony-700);
+  color: #FFFFFF;
+  border: 1px solid var(--primitive-peony-700);
+}
+
+.btn-botanical-peony:hover {
+  background-color: var(--primitive-peony-800);
+  box-shadow: 0 8px 20px -4px rgba(66, 18, 27, 0.4);
+}
+
+.btn-botanical-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+}
+
+.btn-botanical-outline:hover {
+  background-color: var(--bg-surface);
+  border-color: var(--accent-botanical);
+  color: var(--accent-botanical);
+}
+
+.editorial-link {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-bottom: 1px solid var(--border-hairline);
+  padding-bottom: 2px;
+  transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.editorial-link:hover {
+  color: var(--accent-botanical);
+  border-color: var(--accent-botanical);
+}
+
+/* --------------------------------------------------------------------------
+   3. Hero Museum Fine-Art Botanical Plate
+   -------------------------------------------------------------------------- */
+.hero-plate-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--ease-organic);
+}
+
+.hero-visual-frame:hover .hero-plate-image {
+  transform: scale(1.03);
+}
+
+
+/* --------------------------------------------------------------------------
+   4. Ambient Petal Physics Canvas
+   -------------------------------------------------------------------------- */
+#petal-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99;
+}
+
+/* --------------------------------------------------------------------------
+   5. Scroll-Bloom Installation Section Styles ("L'Épanouissement")
+   -------------------------------------------------------------------------- */
+.scroll-bloom-section {
+  height: 250vh; /* Deliberate scroll distance for smooth bloom progression */
+  position: relative;
+  background: linear-gradient(180deg, var(--bg-page) 0%, #151914 25%, #180D11 75%, var(--bg-page) 100%);
+  color: #FAF8F5;
+}
+
+.bloom-sticky-viewport {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(4.2rem, 8vh, 6.2rem) clamp(1rem, 3vw, 2.5rem) clamp(0.75rem, 2vh, 2rem);
+  box-sizing: border-box;
+}
+
+/* Fluid Responsive Bloom Stage Banner */
+.bloom-stage-header {
+  text-align: center;
+  max-width: 760px;
+  margin-inline: auto;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.bloom-stage-eyebrow {
+  font-family: var(--font-mono);
+  font-size: clamp(0.6rem, 0.85vw, 0.72rem);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-pollen);
+  margin-bottom: clamp(0.2rem, 0.5vh, 0.4rem);
+}
+
+.bloom-stage-title {
+  font-size: clamp(1.4rem, 2.6vw, 2.4rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: #FAF8F5;
+  margin: 0;
+}
+
+.bloom-stage-caption {
+  font-family: var(--font-subdisplay);
+  font-size: clamp(0.76rem, 1vw, 0.92rem);
+  font-style: italic;
+  color: rgba(250, 248, 245, 0.75);
+  margin-top: clamp(0.2rem, 0.5vh, 0.4rem);
+  max-width: 620px;
+  margin-inline: auto;
+}
+
+.bloom-centerpiece {
+  position: relative;
+  width: min(520px, 90vw);
+  height: min(520px, 90vw);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#bloom-flower-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.45));
+}
+
+#bloom-pollen-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.bloom-telemetry-hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  font-family: var(--font-mono);
+  font-size: clamp(0.62rem, 0.85vw, 0.72rem);
+  letter-spacing: 0.1em;
+  color: rgba(250, 248, 245, 0.75);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: clamp(0.4rem, 1vh, 1rem);
+  flex-shrink: 0;
+}
+
+
+.bloom-progress-badge {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  line-height: 1;
+  color: var(--accent-pollen);
+}
+
+/* --------------------------------------------------------------------------
+   6. Anatomical Dissection Interactive Hotspots
+   -------------------------------------------------------------------------- */
+.anatomy-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-editorial);
+}
+
+.anatomy-node-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: var(--bg-surface-warm);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-xs);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-align: left;
+  margin-bottom: 0.75rem;
+  transition: transform var(--duration-instant) var(--ease-snappy),
+              border-color var(--duration-fast) ease,
+              background-color var(--duration-fast) ease;
+}
+
+.anatomy-node-btn:hover {
+  border-color: var(--accent-botanical);
+  background-color: #FFFFFF;
+}
+
+.anatomy-node-btn.active {
+  border-color: var(--accent-botanical);
+  background-color: rgba(92, 26, 38, 0.05);
+  color: var(--accent-botanical);
+}
+
+.anatomy-node-btn:active {
+  transform: scale(0.98);
+}
+
+/* --------------------------------------------------------------------------
+   7. Florilegium Filter Navigation
+   -------------------------------------------------------------------------- */
+.florilegium-filters {
+  display: inline-flex;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-full);
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 2.5rem;
+}
+
+.filter-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  transition: color var(--duration-instant) ease,
+              background-color var(--duration-instant) ease;
+}
+
+.filter-pill:hover {
+  color: var(--text-primary);
+}
+
+.filter-pill.active {
+  background-color: var(--primitive-lichen-950);
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   8. Commission Estimator Interactive Controls
+   -------------------------------------------------------------------------- */
+.estimator-radio-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 540px) {
+  .estimator-radio-group {
+    grid-template-columns: 1fr;
+  }
+}
+
+.estimator-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-surface-warm);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.825rem;
+  transition: border-color var(--duration-fast) ease;
+}
+
+.estimator-radio-label:has(input:checked) {
+  border-color: var(--accent-botanical);
+  background-color: rgba(92, 26, 38, 0.04);
+}
+
+.est-output-box {
+  background: var(--primitive-lichen-950);
+  color: #FAF8F5;
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.775rem;
+}
+
+/* ==========================================================================
+   9. Artistic Living Botanical Ambient Canvas & Mesh Aura
+   ========================================================================== */
+.botanical-ambient-system {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+  transition: background 0.8s var(--ease-organic);
+  background:
+    radial-gradient(circle 900px at var(--ambient-focal-x, 50%) var(--ambient-focal-y, 30%), var(--ambient-aura-primary, rgba(235, 175, 185, 0.22)) 0%, transparent 70%),
+    radial-gradient(circle 850px at calc(100% - var(--ambient-focal-x, 50%)) calc(100% - var(--ambient-focal-y, 30%)), var(--ambient-aura-secondary, rgba(180, 205, 185, 0.18)) 0%, transparent 65%),
+    radial-gradient(ellipse 1100px 700px at 50% 85%, var(--ambient-aura-accent, rgba(250, 220, 160, 0.18)) 0%, transparent 75%),
+    var(--bg-page);
+}
+
+/* Subtle Archival Fine-Art Watercolor Paper Grain */
+.botanical-ambient-system::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.038;
+  background-image: radial-gradient(var(--primitive-lichen-950) 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+  pointer-events: none;
+}
+
+/* Floating Botanical Foliage Silhouettes */
+.botanical-silhouette {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.055;
+  color: var(--primitive-lichen-800);
+  transition: opacity var(--duration-slow) ease, transform 0.6s var(--ease-organic);
+  will-change: transform;
+}
+
+.botanical-silhouette.sil-hero-left {
+  top: 5vh;
+  left: -4vw;
+  width: min(520px, 45vw);
+  height: auto;
+}
+
+.botanical-silhouette.sil-florilegium-right {
+  top: 170vh;
+  right: -3vw;
+  width: min(480px, 40vw);
+  height: auto;
+}
+
+.botanical-silhouette.sil-manifesto-left {
+  top: 360vh;
+  left: -2vw;
+  width: min(440px, 35vw);
+  height: auto;
+}
+
+/* ==========================================================================
+   10. Artistic Museum Botanical Frames (Khung Nghệ Thuật)
+   Double-matting, antique gold hairline, SVG floral corner filigrees,
+   and Emil Kowalski 3D perspective spring physics.
+   ========================================================================== */
+.botanical-art-frame {
+  position: relative;
+  background-color: var(--frame-matting-bg);
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-hairline);
+  box-shadow: 0 4px 24px -4px rgba(20, 23, 19, 0.08),
+              inset 0 0 0 1px var(--frame-gold-hairline);
+  transition: border-color var(--duration-fast) ease,
+              box-shadow var(--duration-fast) ease,
+              background-color var(--duration-fast) ease;
+  overflow: hidden;
+}
+
+.specimen-card:hover .botanical-art-frame,
+.hero-visual-frame:hover {
+  border-color: rgba(212, 154, 61, 0.45);
+  box-shadow: 0 20px 48px -12px var(--card-active-glow),
+              inset 0 0 0 1.5px var(--frame-gold-bright);
+}
+
+/* Inner Passe-Partout Matting Bevel */
+.frame-inner-matting {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(20, 23, 19, 0.12);
+  background-color: var(--primitive-lichen-950);
+}
+
+/* Delicate Botanical Corner Filigrees */
+.corner-filigree {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  color: var(--frame-corner-color);
+  pointer-events: none;
+  z-index: 12;
+  transition: transform var(--duration-fast) var(--ease-snappy),
+              color var(--duration-fast) ease,
+              filter var(--duration-fast) ease;
+}
+
+.corner-filigree.top-left {
+  top: 4px;
+  left: 4px;
+}
+
+.corner-filigree.top-right {
+  top: 4px;
+  right: 4px;
+  transform: scaleX(-1);
+}
+
+.corner-filigree.bottom-left {
+  bottom: 4px;
+  left: 4px;
+  transform: scaleY(-1);
+}
+
+.corner-filigree.bottom-right {
+  bottom: 4px;
+  right: 4px;
+  transform: scale(-1, -1);
+}
+
+/* Filigree Bloom & Gleam on Hover */
+.specimen-card:hover .corner-filigree,
+.hero-visual-frame:hover .corner-filigree {
+  color: var(--frame-gold-bright);
+  filter: drop-shadow(0 0 6px rgba(230, 176, 92, 0.55));
+}
+
+.specimen-card:hover .corner-filigree.top-left,
+.hero-visual-frame:hover .corner-filigree.top-left {
+  transform: scale(1.12);
+}
+
+.specimen-card:hover .corner-filigree.top-right,
+.hero-visual-frame:hover .corner-filigree.top-right {
+  transform: scale(-1.12, 1.12);
+}
+
+.specimen-card:hover .corner-filigree.bottom-left,
+.hero-visual-frame:hover .corner-filigree.bottom-left {
+  transform: scale(1.12, -1.12);
+}
+
+.specimen-card:hover .corner-filigree.bottom-right,
+.hero-visual-frame:hover .corner-filigree.bottom-right {
+  transform: scale(-1.12, -1.12);
+}
+
+/* Botanical Specimen Seal Stamp */
+.frame-embossed-seal {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(20, 23, 19, 0.65);
+  backdrop-filter: blur(8px);
+  color: var(--accent-pollen);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 10;
+  transition: transform var(--duration-fast) var(--ease-snappy),
+              border-color var(--duration-fast) ease,
+              background-color var(--duration-fast) ease;
+}
+
+.specimen-card:hover .frame-embossed-seal,
+.hero-visual-frame:hover .frame-embossed-seal {
+  transform: scale(1.08) rotate(8deg);
+  border-color: var(--frame-gold-bright);
+  background: rgba(20, 23, 19, 0.85);
+}
+
+/* Museum Inscription Plate Plaque */
+.frame-plaque-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(20, 23, 19, 0.08);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.frame-plaque-strip strong {
+  color: var(--accent-botanical);
+  font-weight: 500;
+}
+
+/* Hero Museum Frame Plaque */
+.hero-museum-plaque {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  background: rgba(20, 23, 19, 0.88);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(212, 154, 61, 0.35);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: #FAF8F5;
+  pointer-events: none;
+  z-index: 10;
+  transition: border-color var(--duration-fast) ease,
+              box-shadow var(--duration-fast) ease;
+}
+
+.hero-visual-frame:hover .hero-museum-plaque {
+  border-color: var(--frame-gold-bright);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* ==========================================================================
+   11. Living Botanical Resonance HUD (UI/UX Interactive System)
+   ========================================================================== */
+.botanical-resonance-hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  box-shadow: 0 8px 30px -6px rgba(20, 23, 19, 0.06);
+  border-radius: var(--radius-full);
+  padding: 0.6rem 1.4rem;
+  margin-bottom: 2rem;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.resonance-info {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.resonance-pulse-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-pollen);
+  box-shadow: 0 0 10px var(--accent-pollen);
+  animation: pulse-ring 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.resonance-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.resonance-specimen-name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.resonance-swatches {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resonance-swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform var(--duration-instant) var(--ease-snappy),
+              box-shadow var(--duration-fast) ease,
+              outline var(--duration-instant) ease;
+  position: relative;
+}
+
+.resonance-swatch:hover {
+  transform: scale(1.28);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+.resonance-swatch.active {
+  transform: scale(1.22);
+  outline: 2px solid var(--primitive-lichen-950);
+  outline-offset: 2px;
+}
+
+.resonance-spectrum-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-botanical);
+  background: rgba(92, 26, 38, 0.06);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+/* Card Pulse Highlight when triggered from Resonance HUD */
+@keyframes card-bloom-pulse {
+  0% { box-shadow: 0 0 0 0 var(--accent-botanical); }
+  50% { box-shadow: 0 0 32px 8px var(--card-active-glow); }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+.specimen-card.pulse-highlight {
+  animation: card-bloom-pulse 1.2s var(--ease-organic);
+}
+
+/* ==========================================================================
+   12. Botanical Foliage Vines Framing Floating Masthead
+   ========================================================================== */
+.masthead-vine {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1002;
+  color: var(--frame-corner-color);
+  opacity: 0.38;
+  transition: opacity var(--duration-fast) ease,
+              color var(--duration-fast) ease,
+              filter var(--duration-fast) ease;
+}
+
+.masthead-vine-left {
+  top: -8px;
+  left: -12px;
+  width: 48px;
+  height: 32px;
+}
+
+.masthead-vine-right {
+  bottom: -8px;
+  right: -12px;
+  width: 48px;
+  height: 32px;
+}
+
+.floating-masthead:hover .masthead-vine {
+  opacity: 0.7;
+  color: var(--frame-gold-bright);
+  filter: drop-shadow(0 0 4px rgba(230, 176, 92, 0.4));
+}
+
+/* ==========================================================================
+   13. Real Photographic Rose Bloom Centerpiece: Sculptural Botanical Armature
+   ========================================================================== */
+.bloom-centerpiece {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-block: clamp(0.25rem, 1.2vh, 1.25rem);
+  flex-shrink: 1;
+  min-height: 0;
+  z-index: 5;
+}
+
+.bloom-portal-masterpiece {
+  position: relative;
+  width: min(480px, 80vw, 44vh);
+  height: min(480px, 80vw, 44vh);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bloom-halo-glow {
+  position: absolute;
+  inset: -15%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(230, 176, 92, 0.28) 0%, rgba(142, 28, 48, 0.25) 45%, transparent 70%);
+  filter: blur(28px);
+  pointer-events: none;
+  animation: bloomHaloBreathe 4s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+@keyframes bloomHaloBreathe {
+  0% { transform: scale(0.94); opacity: 0.65; }
+  100% { transform: scale(1.08); opacity: 1; }
+}
+
+.bloom-bezel-ring {
+  position: absolute;
+  inset: -5%;
+  pointer-events: none;
+  z-index: 8;
+  animation: slowBezelRotate 140s linear infinite;
+}
+
+.bloom-bezel-svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes slowBezelRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.bloom-wreath-armature {
+  position: absolute;
+  inset: -8%;
+  pointer-events: none;
+  z-index: 10;
+  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.7));
+}
+
+.bloom-portal-frame {
+  position: relative;
+  width: 85%;
+  height: 85%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 8px;
+  background: radial-gradient(circle, rgba(212, 154, 61, 0.25) 0%, rgba(18, 20, 17, 0.96) 80%);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85),
+              0 0 0 2px var(--frame-gold-bright),
+              inset 0 0 25px rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+@media (max-height: 820px) {
+  .bloom-sticky-viewport {
+    padding-top: clamp(3.6rem, 6.5vh, 4.4rem);
+    padding-bottom: clamp(0.4rem, 1.2vh, 0.8rem);
+  }
+  .bloom-portal-masterpiece {
+    width: min(400px, 76vw, 39vh);
+    height: min(400px, 76vw, 39vh);
+  }
+  .bloom-telemetry-hud {
+    padding-top: 0.4rem;
+  }
+  .bloom-progress-badge {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-height: 700px) {
+  .bloom-sticky-viewport {
+    padding-top: 3.2rem;
+    padding-bottom: 0.35rem;
+  }
+  .bloom-portal-masterpiece {
+    width: min(310px, 68vw, 35vh);
+    height: min(310px, 68vw, 35vh);
+  }
+  .bloom-telemetry-hud {
+    padding-top: 0.3rem;
+    font-size: 0.62rem;
+  }
+  .bloom-progress-badge {
+    font-size: 1.4rem;
+  }
+  .bloom-stage-title {
+    font-size: 1.35rem;
+  }
+  .bloom-stage-caption {
+    display: none; /* Auto-hide quote on ultra-short screens so rose centerpiece has full focus */
+  }
+}
+
+@media (max-width: 640px) {
+  .bloom-sticky-viewport {
+    padding-top: 4.5rem;
+    padding-inline: 0.85rem;
+    padding-bottom: 0.75rem;
+  }
+  .bloom-portal-masterpiece {
+    width: min(320px, 78vw, 38vh);
+    height: min(320px, 78vw, 38vh);
+  }
+  .bloom-telemetry-hud {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    justify-content: space-around;
+    text-align: center;
+    padding-top: 0.4rem;
+  }
+  .bloom-telemetry-hud > div {
+    font-size: 0.62rem;
+  }
+}
+
+.bloom-real-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: contrast(1.08) saturate(1.15);
+  display: block;
+}
+
+.bloom-portal-seal-pin {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(22, 25, 21, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid var(--frame-gold-bright);
+  color: var(--frame-gold-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 10px rgba(230, 176, 92, 0.4);
+  z-index: 12;
+}
+
+/* ==========================================================================
+   14. L'Alchimie Florale: Visual Photographic Storytelling
+   ========================================================================== */
+.alchemy-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+@media (max-width: 1080px) {
+  .alchemy-visual-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .alchemy-visual-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.alchemy-card {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--frame-matting-bg);
+  border: 1px solid var(--border-hairline);
+  box-shadow: var(--shadow-editorial);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-fast) var(--ease-snappy),
+              box-shadow var(--duration-fast) ease,
+              border-color var(--duration-fast) ease;
+}
+
+.alchemy-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(212, 154, 61, 0.4);
+  box-shadow: 0 20px 48px -8px var(--card-active-glow);
+}
+
+.alchemy-media-box {
+  position: relative;
+  aspect-ratio: 4 / 4.8;
+  overflow: hidden;
+  background-color: var(--primitive-lichen-950);
+  padding: 8px;
+}
+
+.alchemy-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-xs);
+  transition: transform 0.8s var(--ease-organic);
+}
+
+.alchemy-card:hover .alchemy-img {
+  transform: scale(1.08);
+}
+
+.alchemy-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* ==========================================================================
+   15. La Danse des Fleurs: The Suspended Botanical Sanctuary
+   ========================================================================== */
+.sanctuary-section {
+  position: relative;
+  padding-block: clamp(3.5rem, 6vw, 7rem);
+  background: linear-gradient(180deg, var(--bg-page) 0%, rgba(247, 243, 237, 0.6) 45%, var(--bg-surface-warm) 100%);
+  border-top: 1px solid var(--border-hairline);
+  overflow: visible;
+}
+
+.sanctuary-stage-container {
+  position: relative;
+  width: 100%;
+  max-width: 1260px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2.25rem);
+  padding-block: 2rem 4rem;
+}
+
+.sanctuary-floating-item {
+  position: relative;
+  width: 100%;
+  will-change: transform;
+  transition: filter var(--duration-fast) ease;
+}
+
+/* Staggered Desktop Subtle Heights */
+.sanctuary-item-1 { margin-top: 0px; }
+.sanctuary-item-2 { margin-top: 28px; }
+.sanctuary-item-3 { margin-top: -16px; }
+.sanctuary-item-4 { margin-top: 20px; }
+
+@media (max-width: 1024px) {
+  .sanctuary-stage-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .sanctuary-item-1, .sanctuary-item-2, .sanctuary-item-3, .sanctuary-item-4 {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 580px) {
+  .sanctuary-stage-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ==========================================================================
+   16. Le Carnet des Senteurs: Olfactory Floral Anthology
+   ========================================================================== */
+.scent-anthology-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+@media (max-width: 1100px) {
+  .scent-anthology-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .scent-anthology-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.scent-card {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  transition: transform var(--duration-fast) var(--ease-snappy),
+              box-shadow var(--duration-fast) ease,
+              border-color var(--duration-fast) ease;
+}
+
+.scent-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 48px -8px var(--card-active-glow);
+  border-color: rgba(212, 154, 61, 0.45);
+}
+
+.scent-img-wrapper {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: var(--radius-xs);
+  background-color: var(--primitive-parchment);
+}
+
+.scent-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-organic);
+}
+
+.scent-card:hover .scent-img {
+  transform: scale(1.06);
+}
+
+.scent-chords-box {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-hairline);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.825rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.chord-row {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.chord-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-botanical);
+  min-width: 54px;
+}
+
+
+
+/* ==========================================================================
+   17. LE FOLIO CURATORIAL BOTANIQUE: INTERACTIVE MODAL & LIGHTBOX SUITE
+   Sub-250ms Emil Kowalski spring physics, fine-art museum framing & tactile accords
+   ========================================================================== */
+
+/* Curatorial Hover Badge on Specimen Cards */
+.folio-hover-chip {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 0.3rem 0.65rem;
+  background: rgba(22, 25, 21, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--frame-gold-bright);
+  border-radius: var(--radius-xs);
+  color: var(--frame-gold-bright);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-4px) scale(0.94);
+  transition: opacity var(--duration-fast) ease,
+              transform var(--duration-fast) var(--ease-snappy);
+  z-index: 15;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.specimen-card:hover .folio-hover-chip,
+.hero-visual-frame:hover .folio-hover-chip,
+.alchemy-card:hover .folio-hover-chip,
+.sanctuary-floating-item:hover .folio-hover-chip,
+.scent-card:hover .folio-hover-chip {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Golden Blossom Petal Click Ripple Effect ("Hoa Lá Cành") */
+.petal-ripple-fx {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  width: 0;
+  height: 0;
+}
+
+.ripple-petal-leaf {
+  position: absolute;
+  width: 14px;
+  height: 22px;
+  background: radial-gradient(circle at 35% 35%, #F0D7A5, #D49A3D 70%, #9E6B20);
+  border-radius: 50% 50% 50% 10% / 60% 60% 40% 40%;
+  transform: translate(-50%, -50%) scale(0.2);
+  opacity: 0.95;
+  box-shadow: 0 0 10px rgba(230, 176, 92, 0.6);
+  animation: petalBurst 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes petalBurst {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(0.2);
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) rotate(220deg) scale(0.85);
+    opacity: 0;
+  }
+}
+
+/* Modal Overlay & Backdrop */
+.dossier-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+
+.dossier-modal-overlay.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dossier-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 17, 13, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Modal Dialog Window Frame */
+.dossier-dialog-window {
+  position: relative;
+  z-index: 10;
+  width: min(94vw, 1080px);
+  max-height: min(92vh, 880px);
+  overflow-y: auto;
+  background-color: var(--bg-surface-warm);
+  background-image: radial-gradient(circle at 50% 0%, rgba(240, 215, 165, 0.15) 0%, transparent 60%);
+  border: 1.5px solid rgba(212, 154, 61, 0.45);
+  box-shadow: 0 35px 90px -15px rgba(0, 0, 0, 0.65),
+              inset 0 0 0 1px rgba(255, 255, 255, 0.5),
+              0 0 0 1px rgba(212, 154, 61, 0.2);
+  border-radius: var(--radius-sm);
+  padding: clamp(1.75rem, 3.5vw, 3rem);
+  transform: scale(0.96) translateY(12px);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dossier-modal-overlay.is-active .dossier-dialog-window {
+  transform: scale(1) translateY(0);
+}
+
+/* Decorative Climbing Vines on Modal Window */
+.dossier-vine {
+  position: absolute;
+  width: 140px;
+  height: 70px;
+  pointer-events: none;
+  z-index: 12;
+}
+
+.dossier-vine.top-left {
+  top: 6px;
+  left: 6px;
+}
+
+.dossier-vine.top-right {
+  top: 6px;
+  right: 6px;
+  transform: scaleX(-1);
+}
+
+/* Modal Close Button */
+.dossier-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 154, 61, 0.45);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: transform 0.1s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.15s ease,
+              background-color 0.15s ease;
+}
+
+.dossier-close-btn:hover {
+  transform: scale(1.08);
+  border-color: var(--frame-gold-bright);
+  color: var(--accent-pollen);
+}
+
+.dossier-close-btn:active {
+  transform: scale(0.94);
+}
+
+/* Modal 2-Column Body Grid */
+.dossier-body-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1.35fr;
+  gap: clamp(2rem, 3.5vw, 3rem);
+  align-items: flex-start;
+}
+
+@media (max-width: 860px) {
+  .dossier-body-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Left Visual Pane */
+.dossier-visual-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.dossier-plate-frame {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid rgba(212, 154, 61, 0.35);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.18),
+              inset 0 0 0 1px rgba(212, 154, 61, 0.15);
+}
+
+.dossier-img-matting {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(20, 23, 19, 0.14);
+  background-color: var(--primitive-lichen-950);
+}
+
+.dossier-specimen-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease-organic);
+}
+
+.dossier-plate-frame:hover .dossier-specimen-img {
+  transform: scale(1.04);
+}
+
+.dossier-embossed-seal {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(22, 25, 21, 0.72);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--frame-gold-bright);
+  color: var(--frame-gold-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.dossier-plate-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.85rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--border-hairline);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+}
+
+.btn-botanical-resonate {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  background: rgba(212, 154, 61, 0.12);
+  border: 1px solid rgba(212, 154, 61, 0.5);
+  border-radius: var(--radius-xs);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.1s var(--ease-snappy),
+              background-color 0.15s ease,
+              border-color 0.15s ease;
+}
+
+.btn-botanical-resonate:hover {
+  background: rgba(212, 154, 61, 0.22);
+  border-color: var(--frame-gold-bright);
+  transform: translateY(-2px);
+}
+
+.btn-botanical-resonate:active {
+  transform: scale(0.97);
+}
+
+.btn-botanical-resonate.resonate-pulsing {
+  animation: pulseGoldGlow 1.2s ease infinite;
+}
+
+@keyframes pulseGoldGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(230, 176, 92, 0.4); }
+  50% { box-shadow: 0 0 16px 4px rgba(230, 176, 92, 0.6); }
+}
+
+/* Right Information Pane */
+.dossier-info-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dossier-header-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border-bottom: 1px solid var(--border-hairline);
+  padding-bottom: 1.25rem;
+}
+
+.dossier-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.15;
+}
+
+.dossier-poetic-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--accent-botanical);
+}
+
+.dossier-harvest-meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-top: 0.25rem;
+}
+
+.dossier-monograph-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-xs);
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--frame-gold-bright);
+}
+
+.dossier-monograph-p {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* Olfactory Chords Section */
+.dossier-chords-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dossier-section-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-botanical);
+}
+
+.dossier-chords-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .dossier-chords-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dossier-chord-item {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-xs);
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: border-color var(--duration-fast) ease,
+              transform var(--duration-fast) var(--ease-snappy);
+}
+
+.dossier-chord-item:hover {
+  border-color: var(--frame-gold-bright);
+  transform: translateY(-2px);
+}
+
+.chord-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  color: var(--accent-pollen);
+}
+
+.dossier-chord-item strong {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.chord-desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+/* Conservation Specifications Grid */
+.dossier-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem 1.25rem;
+  padding: 1rem 1.25rem;
+  background: rgba(20, 23, 19, 0.03);
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-hairline);
+}
+
+@media (max-width: 580px) {
+  .dossier-specs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dossier-spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.spec-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-botanical);
+}
+
+.spec-val {
+  font-size: 0.8rem;
+  color: var(--text-primary);
+}
+
+/* Action Bar */
+.dossier-actions-bar {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 0.5rem;
+}
+
+/* ==========================================================================
+   18. Gentle Real-Time Single Petite Flower Click Effect ("Bông Hoa Nho Nhỏ")
+   ========================================================================== */
+.click-flower-particle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%) scale(0.2);
+  animation: petiteBloom 0.52s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.click-flower-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 3px 10px var(--flower-shadow, rgba(179, 38, 56, 0.35)));
+}
+
+@keyframes petiteBloom {
+  0% {
+    transform: translate(-50%, -50%) scale(0.15) rotate(var(--initial-rot, -15deg));
+    opacity: 0.95;
+  }
+  38% {
+    transform: translate(-50%, -50%) scale(1.12) rotate(calc(var(--initial-rot, -15deg) + 12deg));
+    opacity: 1;
+  }
+  70% {
+    transform: translate(-50%, -50%) translateY(-6px) scale(1) rotate(calc(var(--initial-rot, -15deg) + 18deg));
+    opacity: 0.88;
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(-14px) scale(0.7) rotate(calc(var(--initial-rot, -15deg) + 26deg));
+    opacity: 0;
+  }
+}
+
+/* Living Background Cursor Light Trail Overlay */
+.ambient-cursor-light {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  transform: translate(calc(var(--cursor-x, 50vw) - 325px), calc(var(--cursor-y, 30vh) - 325px));
+  background: radial-gradient(circle, var(--ambient-aura-primary, rgba(235, 145, 165, 0.35)) 0%, var(--ambient-aura-accent, rgba(245, 215, 140, 0.22)) 40%, transparent 70%);
+  filter: blur(45px);
+  pointer-events: none;
+  z-index: -1;
+  transition: transform 0.08s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   19. Le Jardin des Floraisons: The Continuous Blooming Tapestry
+   ========================================================================== */
+.living-garden-section {
+  position: relative;
+  padding-block: clamp(6rem, 12vw, 12rem);
+  background: linear-gradient(180deg, rgba(247, 244, 239, 0.85) 0%, rgba(247, 243, 237, 0.92) 50%, rgba(247, 244, 239, 0.85) 100%);
+  border-top: 1px solid var(--border-hairline);
+  overflow: hidden;
+}
+
+.living-garden-container {
+  position: relative;
+  max-width: 1100px;
+  margin-inline: auto;
+  min-height: 1100px;
+}
+
+.garden-central-vine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 140px;
+  height: 100%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 2;
+  filter: drop-shadow(0 0 10px rgba(230, 176, 92, 0.45));
+}
+
+.garden-bloom-item {
+  position: relative;
+  z-index: 5;
+  margin-bottom: clamp(3.5rem, 7vw, 6.5rem);
+  display: flex;
+  cursor: pointer;
+  width: 100%;
+}
+
+.garden-item-left {
+  justify-content: flex-start;
+}
+
+.garden-item-right {
+  justify-content: flex-end;
+}
+
+.garden-bloom-card {
+  position: relative;
+  width: min(440px, 85vw);
+  background: var(--bg-surface);
+  border: 1px solid rgba(212, 154, 61, 0.35);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  box-shadow: 0 16px 48px -12px rgba(0, 0, 0, 0.18),
+              inset 0 0 0 1px var(--frame-gold-hairline);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: transform var(--duration-fast) var(--ease-snappy),
+              border-color var(--duration-fast) ease,
+              box-shadow var(--duration-fast) ease;
+}
+
+.garden-bloom-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: var(--frame-gold-bright);
+  box-shadow: 0 25px 60px -10px var(--card-active-glow);
+}
+
+.garden-flower-halo {
+  position: absolute;
+  inset: -15%;
+  border-radius: var(--radius-sm);
+  background: radial-gradient(circle, var(--ambient-aura-primary, rgba(235, 145, 165, 0.25)) 0%, transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  filter: blur(20px);
+  z-index: -1;
+}
+
+.garden-bloom-card:hover .garden-flower-halo {
+  opacity: 1;
+}
+
+.garden-bloom-frame {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  padding: 6px;
+  background: radial-gradient(circle, rgba(212, 154, 61, 0.2) 0%, rgba(20, 23, 19, 0.85) 80%);
+  border: 1.5px solid var(--frame-gold-bright);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.garden-img-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.garden-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-organic);
+}
+
+.garden-bloom-card:hover .garden-img {
+  transform: scale(1.12);
+}
+
+.garden-bloom-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+@media (max-width: 720px) {
+  .garden-central-vine {
+    display: none;
+  }
+  .garden-item-left, .garden-item-right {
+    justify-content: center;
+  }
+  .garden-bloom-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+/* ==========================================================================
+   20. Concierge & Footer Botanical Decorations ("Hoa Lá Trang Trí")
+   ========================================================================== */
+.concierge-botanical-crest {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  color: var(--accent-pollen);
+}
+
+.concierge-crest-svg {
+  width: 58px;
+  height: 38px;
+}
+
+.concierge-card {
+  position: relative;
+  border: 1.5px solid rgba(212, 154, 61, 0.45);
+  box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.35),
+              inset 0 0 0 1px rgba(212, 154, 61, 0.18);
+}
+
+.concierge-card::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 44px;
+  height: 44px;
+  border-top: 2px solid var(--frame-gold-bright);
+  border-right: 2px solid var(--frame-gold-bright);
+  pointer-events: none;
+}
+
+.concierge-card::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: -8px;
+  width: 44px;
+  height: 44px;
+  border-bottom: 2px solid var(--frame-gold-bright);
+  border-left: 2px solid var(--frame-gold-bright);
+  pointer-events: none;
+}
+
+.footer-botanical-frieze {
+  width: 100%;
+  height: 38px;
+  margin-bottom: 2.5rem;
+  color: var(--frame-gold-bright);
+  opacity: 0.75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-frieze-svg {
+  width: min(850px, 94vw);
+  height: 100%;
+}

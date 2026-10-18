@@ -1,0 +1,58 @@
+/* ==========================================================================
+   ÉPHÉMÈRE ORGANIC ANIMATIONS
+   Kinetic transitions, bloom clip-paths, and botanical physics
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Bloom Entrance Animations
+   Emil Kowalski Rule: Enter from subtle scale (never 0), fast and organic
+   -------------------------------------------------------------------------- */
+@keyframes bloom-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-bloom {
+  animation: bloom-in 0.45s var(--ease-organic) forwards;
+}
+
+/* --------------------------------------------------------------------------
+   2. Staggered Editorial Reveal
+   -------------------------------------------------------------------------- */
+.reveal-stagger-1 { animation-delay: 0.08s; }
+.reveal-stagger-2 { animation-delay: 0.16s; }
+.reveal-stagger-3 { animation-delay: 0.24s; }
+
+/* --------------------------------------------------------------------------
+   3. Soft Ambient Breathing Keyframes
+   -------------------------------------------------------------------------- */
+@keyframes petal-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+}
+
+.ambient-float {
+  animation: petal-float 6s ease-in-out infinite;
+}
+
+/* --------------------------------------------------------------------------
+   4. Tactile Micro-Interactions Easing
+   -------------------------------------------------------------------------- */
+.interactive-hover-lift {
+  transition: transform var(--duration-fast) var(--ease-snappy),
+              box-shadow var(--duration-fast) ease;
+}
+
+.interactive-hover-lift:hover {
+  transform: translateY(-2px);
+}

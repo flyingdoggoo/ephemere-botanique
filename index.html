@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ÉPHÉMÈRE // Haute Botanical Atelier &amp; Sculptural Floristry</title>
+  <meta name="description" content="Where botanical fragility transcends into sculptural permanence. Haute couture floral art, kinetic scroll-bloom installations, and rare botanical specimens from Paris and Kyoto.">
+  <meta name="theme-color" content="#FAF8F5">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10' fill='%235C1A26'/><path d='M12 6 C10 9, 10 15, 12 18 C14 15, 14 9, 12 6' fill='%23FAF8F5'/></svg>">
+
+  <!-- Preconnect & Preload Critical Assets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/images/hero-peony.webp" type="image/webp">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Geist+Mono:wght@300;400;500&family=Italiana&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/reset.css?v=perf_v402">
+  <link rel="stylesheet" href="styles/tokens.css?v=perf_v402">
+  <link rel="stylesheet" href="styles/typography.css?v=perf_v402">
+  <link rel="stylesheet" href="styles/components.css?v=perf_v402">
+  <link rel="stylesheet" href="styles/animations.css?v=perf_v402">
+  <link rel="stylesheet" href="styles/main.css?v=perf_v402">
+</head>
+<body>
+  <!-- =========================================================================
+       Artistic Living Botanical Ambient System & Watermark Silhouettes
+       Interactive organic mesh that shifts color resonance on specimen interaction
+       ========================================================================= -->
+  <div id="botanical-ambient-system" class="botanical-ambient-system" aria-hidden="true">
+    <!-- Living Cursor Color Trail Focal Element -->
+    <div class="ambient-cursor-light"></div>
+
+    <!-- Victorian Botanical Fern Silhouette (Hero Left Margin) -->
+    <svg class="botanical-silhouette sil-hero-left" viewBox="0 0 400 600" fill="currentColor">
+      <path d="M50 550 Q120 400 180 250 Q220 150 240 50 Q230 100 200 180 Q160 280 120 420 Z" />
+      <path d="M180 250 Q240 210 320 220 Q260 240 200 260 Z" />
+      <path d="M150 310 Q230 280 340 300 Q250 320 170 330 Z" />
+      <path d="M120 380 Q220 360 350 400 Q240 410 140 400 Z" />
+      <path d="M90 460 Q200 450 330 510 Q210 500 110 480 Z" />
+      <circle cx="240" cy="50" r="6" />
+    </svg>
+
+    <!-- Japanese Bamboo & Climbing Rose Silhouette (Florilegium Right Margin) -->
+    <svg class="botanical-silhouette sil-florilegium-right" viewBox="0 0 400 700" fill="currentColor">
+      <path d="M350 50 Q280 250 260 450 Q250 580 270 680" stroke="currentColor" stroke-width="3" fill="none"/>
+      <path d="M280 250 Q200 220 120 240 Q190 260 260 270 Z" />
+      <path d="M270 340 Q180 320 90 350 Q170 370 255 360 Z" />
+      <path d="M260 450 Q160 430 80 480 Q165 480 255 470 Z" />
+      <path d="M265 560 Q175 560 110 620 Q185 605 268 580 Z" />
+    </svg>
+
+    <!-- Peony & Ginkgo Leaf Silhouette (Manifesto Left Margin) -->
+    <svg class="botanical-silhouette sil-manifesto-left" viewBox="0 0 400 500" fill="currentColor">
+      <path d="M50 450 Q180 320 260 180 Q320 90 380 40 Q320 120 230 240 Q150 340 50 450 Z" />
+      <path d="M260 180 C290 130 350 140 370 190 C340 210 290 200 260 180 Z" />
+      <path d="M200 270 C240 220 310 240 330 290 C290 300 240 295 200 270 Z" />
+    </svg>
+
+    <!-- Saffron Poppy & Lotus Branch (Living Garden Right Margin) -->
+    <svg class="botanical-silhouette sil-garden-right" viewBox="0 0 400 650" fill="currentColor" style="top:260vh; right:-2vw; width:min(460px, 40vw); opacity:0.18; color:var(--accent-pollen);">
+      <path d="M380 600 Q260 450 220 300 Q190 150 240 20" stroke="currentColor" stroke-width="2.5" fill="none"/>
+      <circle cx="240" cy="20" r="14" fill="currentColor" opacity="0.6"/>
+      <path d="M220 300 C160 250 90 270 70 320 C120 340 180 330 220 300 Z" fill="currentColor" opacity="0.5"/>
+      <path d="M240 420 C180 380 120 410 100 460 C150 470 210 450 240 420 Z" fill="currentColor" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <!-- Ambient Organic Petal Physics Canvas -->
+  <canvas id="petal-canvas" aria-hidden="true"></canvas>
+
+
+  <!-- =========================================================================
+       1. Floating Haute Editorial Masthead (The Anti-Corporate Navigation)
+       ========================================================================= -->
+  <nav class="floating-masthead" aria-label="Haute Botanical Navigation">
+    <!-- Subtle, Minimal Botanical Flourish at Left and Right Caps ("ít thôi, nhẹ nhàng") -->
+    <svg class="masthead-vine masthead-vine-left" viewBox="0 0 60 40" fill="none" aria-hidden="true">
+      <path d="M55 35 Q35 30 25 20 Q15 10 5 6" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/>
+      <path d="M25 20 Q18 14 14 6 C20 7 24 12 25 20 Z" fill="currentColor" opacity="0.35"/>
+      <circle cx="5" cy="6" r="1.8" fill="var(--accent-pollen)"/>
+    </svg>
+    <svg class="masthead-vine masthead-vine-right" viewBox="0 0 60 40" fill="none" aria-hidden="true">
+      <path d="M5 6 Q15 10 25 20 Q35 30 55 35" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/>
+      <path d="M35 20 Q42 14 46 6 C40 7 36 12 35 20 Z" fill="currentColor" opacity="0.35"/>
+      <circle cx="55" cy="35" r="1.8" fill="var(--accent-pollen)"/>
+    </svg>
+
+    <div class="masthead-inner">
+      <div class="masthead-brand">
+        <!-- Botanical Rosette Seal -->
+        <svg class="masthead-seal" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <circle cx="16" cy="16" r="14.5" stroke="currentColor" stroke-width="1"/>
+          <path d="M16 4C14 10 14 22 16 28C18 22 18 10 16 4Z" fill="currentColor" fill-opacity="0.25" stroke="currentColor" stroke-width="0.8"/>
+          <path d="M4 16C10 14 22 14 28 16C22 18 10 18 4 16Z" fill="currentColor" fill-opacity="0.25" stroke="currentColor" stroke-width="0.8"/>
+          <circle cx="16" cy="16" r="2.5" fill="var(--accent-pollen)"/>
+        </svg>
+        <a href="#hero" class="masthead-title">ÉPHÉMÈRE</a>
+      </div>
+
+      <div class="masthead-links">
+        <a href="#bloom-stage" class="masthead-link">L'Épanouissement</a>
+        <a href="#living-garden" class="masthead-link">Le Jardin</a>
+        <a href="#florilegium" class="masthead-link">Florilegium</a>
+        <a href="#alchemy" class="masthead-link">L'Alchimie</a>
+        <a href="#sanctuary-stage" class="masthead-link">Sanctuaire</a>
+        <a href="#manifesto" class="masthead-link">Manifesto</a>
+        <a href="#scents" class="masthead-link">Senteurs</a>
+        <a href="#concierge" class="masthead-link" style="color:var(--accent-pollen); font-style:normal; font-size:0.925rem; font-family:var(--font-mono); letter-spacing:0.06em;">Concierge &rarr;</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <main>
+    <!-- =========================================================================
+         2. Hero Section: Editorial Monument & 2.4x Interactive Macro Loupe
+         ========================================================================= -->
+    <section id="hero" class="section hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Text Column: High-Taste Editorial Typography & Zero Word Slop -->
+          <div class="hero-text-col">
+            <div class="hero-curatorial-badge">
+              <span class="curatorial-seal-dot"></span>
+              <span class="curatorial-label">FOLIO BOTANIQUE &bull; SALON PRIVÉ DE PARIS</span>
+            </div>
+
+            <h1 class="text-hero-editorial">
+              Where botanical fragility<br>
+              transcends into <span class="hero-title-accent">sculptural permanence<span class="hero-title-period">.</span></span>
+            </h1>
+
+            <p class="hero-poetic-whisper">
+              Living flora sculpted in suspended crystal stillness.
+            </p>
+
+            <div class="hero-gateway-row">
+              <a href="#florilegium" class="hero-secondary-link">
+                <span>View All 8 Specimens</span>
+                <span class="link-arrow">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Visual Column: Museum Gilded Botanical Plate with Gilded Wax Seal -->
+          <div class="hero-visual-col">
+            <div class="hero-visual-frame" data-botanical-hue="peony" data-specimen-id="peony">
+              <!-- Botanical Corner Filigrees (Antique Gold Leaf) -->
+              <svg class="corner-filigree top-left" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/>
+                <circle cx="3" cy="3" r="2" fill="currentColor"/>
+                <path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/>
+              </svg>
+              <svg class="corner-filigree top-right" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/>
+                <circle cx="3" cy="3" r="2" fill="currentColor"/>
+                <path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/>
+              </svg>
+              <svg class="corner-filigree bottom-left" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/>
+                <circle cx="3" cy="3" r="2" fill="currentColor"/>
+                <path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/>
+              </svg>
+              <svg class="corner-filigree bottom-right" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/>
+                <circle cx="3" cy="3" r="2" fill="currentColor"/>
+                <path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/>
+              </svg>
+
+              <!-- Inner Beveled Matting -->
+              <div class="hero-inner-matting">
+                <img id="hero-plate-image" class="hero-plate-image" src="assets/images/hero-peony.webp" alt="Paeonia suffruticosa dark velvety peony botanical sculpture with crystalline dew droplets in a glass flacon" fetchpriority="high" decoding="async">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. THE SIGNATURE REAL ROSE BLOOM INSTALLATION ("L'Épanouissement")
+         High-resolution authentic botanical blooming cinematography
+         ========================================================================= -->
+    <section id="bloom-stage" class="scroll-bloom-section">
+      <div class="bloom-sticky-viewport" id="bloom-sticky-viewport">
+        <!-- Top Stage Banner: Poetic Editorial (Zero Dev Wording) -->
+        <div class="bloom-stage-header">
+          <div class="bloom-stage-eyebrow">
+            ATELIER CINÉMATIQUE &bull; L'ÉPANOUISSEMENT
+          </div>
+          <h2 class="bloom-stage-title font-display">
+            The Awakening of the <em>Velvet Rose</em>.
+          </h2>
+          <p id="bloom-stage-desc" class="bloom-stage-caption">
+            "La beauté éphémère d'une rose suspendue au zénith de sa grâce."
+          </p>
+        </div>
+
+        <!-- Centerpiece: Masterpiece Gilded Botanical Armature & Sculpted Wreath Portal -->
+        <div class="bloom-centerpiece">
+          <div class="bloom-portal-masterpiece">
+            <!-- Ambient Glowing Backlight Halo -->
+            <div class="bloom-halo-glow" aria-hidden="true"></div>
+
+            <!-- Concentric Gilded Bezel Ring with Engraved Compass Ticks -->
+            <div class="bloom-bezel-ring" aria-hidden="true">
+              <svg class="bloom-bezel-svg" viewBox="0 0 560 560" fill="none">
+                <circle cx="280" cy="280" r="270" stroke="var(--frame-gold-bright)" stroke-width="1.2" stroke-dasharray="3 6" opacity="0.65"/>
+                <circle cx="280" cy="280" r="258" stroke="var(--frame-gold-bright)" stroke-width="0.8" opacity="0.45"/>
+                <circle cx="280" cy="280" r="248" stroke="var(--frame-gold-bright)" stroke-width="1.5" opacity="0.8"/>
+                <line x1="280" y1="10" x2="280" y2="28" stroke="var(--accent-pollen)" stroke-width="2"/>
+                <line x1="280" y1="532" x2="280" y2="550" stroke="var(--accent-pollen)" stroke-width="2"/>
+                <line x1="10" y1="280" x2="28" y2="280" stroke="var(--accent-pollen)" stroke-width="2"/>
+                <line x1="532" y1="280" x2="550" y2="280" stroke="var(--accent-pollen)" stroke-width="2"/>
+              </svg>
+            </div>
+
+            <!-- Botanical Sculptural Wreath Overlay: Leaves, Rose Boughs & Golden Buds -->
+            <svg class="bloom-wreath-armature" viewBox="0 0 600 600" fill="none" aria-hidden="true">
+              <path d="M 300 35 C 150 35, 35 150, 35 300 C 35 450, 150 565, 300 565 C 450 565, 565 450, 565 300 C 565 150, 450 35, 300 35" stroke="var(--frame-gold-bright)" stroke-width="1.8" opacity="0.75"/>
+              <path d="M 300 48 C 160 48, 48 160, 48 300 C 48 440, 160 552, 300 552 C 440 552, 552 440, 552 300 C 552 160, 440 48, 300 48" stroke="currentColor" stroke-width="1" stroke-dasharray="12 8" opacity="0.45"/>
+              <path d="M 300 30 C 290 10 270 15 275 35 C 285 45 295 40 300 30 Z" fill="var(--frame-gold-bright)" opacity="0.75"/>
+              <path d="M 300 30 C 310 10 330 15 325 35 C 315 45 305 40 300 30 Z" fill="var(--frame-gold-bright)" opacity="0.75"/>
+              <path d="M 480 120 C 500 110 510 125 495 140 C 480 145 475 135 480 120 Z" fill="var(--frame-gold-bright)" opacity="0.65"/>
+              <path d="M 565 300 C 585 290 590 310 575 325 C 560 330 555 315 565 300 Z" fill="var(--frame-gold-bright)" opacity="0.75"/>
+              <path d="M 480 480 C 500 490 510 475 495 460 C 480 455 475 465 480 480 Z" fill="var(--frame-gold-bright)" opacity="0.65"/>
+              <path d="M 300 570 C 290 590 270 585 275 565 C 285 555 295 560 300 570 Z" fill="var(--frame-gold-bright)" opacity="0.75"/>
+              <path d="M 120 480 C 100 490 90 475 105 460 C 120 455 125 465 120 480 Z" fill="var(--frame-gold-bright)" opacity="0.65"/>
+              <path d="M 35 300 C 15 310 10 290 25 275 C 40 270 45 285 35 300 Z" fill="var(--frame-gold-bright)" opacity="0.75"/>
+              <path d="M 120 120 C 100 110 90 125 105 140 C 120 145 125 135 120 120 Z" fill="var(--frame-gold-bright)" opacity="0.65"/>
+              <!-- Golden Rosette Nodes -->
+              <g transform="translate(300, 35)"><circle cx="0" cy="0" r="4.5" fill="var(--accent-pollen)"/><circle cx="0" cy="0" r="8" stroke="var(--frame-gold-bright)" stroke-width="1.2" opacity="0.7"/></g>
+              <g transform="translate(488, 112)"><circle cx="0" cy="0" r="4" fill="var(--accent-pollen)"/><circle cx="0" cy="0" r="7" stroke="var(--frame-gold-bright)" stroke-width="1.2" opacity="0.7"/></g>
+              <g transform="translate(565, 300)"><circle cx="0" cy="0" r="4.5" fill="var(--accent-pollen)"/><circle cx="0" cy="0" r="8" stroke="var(--frame-gold-bright)" stroke-width="1.2" opacity="0.7"/></g>
+              <g transform="translate(488, 488)"><circle cx="0" cy="0" r="4" fill="var(--accent-pollen)"/><circle cx="0" cy="0" r="7" stroke="var(--frame-gold-bright)" stroke-width="1.2" opacity="0.7"/></g>
+              <g transform="translate(300, 565)"><circle cx="0" cy="0" r="4.5" fill="var(--accent-pollen)"/><circle cx="0" cy="0" r="8" stroke="var(--frame-gold-bright)" stroke-width="1.2" opacity="0.7"/></g>
+              <g transform="translate(112, 488)"><circle cx="0" cy="0" r="4" fill="var(--accent-pollen)"/><circle cx="0" cy="0" r="7" stroke="var(--frame-gold-bright)" stroke-width="1.2" opacity="0.7"/></g>
+              <g transform="translate(35, 300)"><circle cx="0" cy="0" r="4.5" fill="var(--accent-pollen)"/><circle cx="0" cy="0" r="8" stroke="var(--frame-gold-bright)" stroke-width="1.2" opacity="0.7"/></g>
+              <g transform="translate(112, 112)"><circle cx="0" cy="0" r="4" fill="var(--accent-pollen)"/><circle cx="0" cy="0" r="7" stroke="var(--frame-gold-bright)" stroke-width="1.2" opacity="0.7"/></g>
+            </svg>
+
+            <!-- Optical Rose Portal Inner Frame: High-Framerate Photographic Sequence -->
+            <div class="bloom-portal-frame">
+              <canvas id="bloom-rose-canvas" class="bloom-real-video" width="640" height="640" aria-label="305-Frame Photographic Real Rose Bloom"></canvas>
+              <canvas id="bloom-pollen-canvas" width="640" height="640" aria-hidden="true"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Poetic Telemetry HUD -->
+        <div class="bloom-telemetry-hud">
+          <div>
+            <span style="color:var(--text-on-dark-muted); font-size:0.68rem;">MOUVEMENT BOTANIQUE:</span><br>
+            <strong id="bloom-current-stage" style="color:#FAF8F5; font-size:0.85rem;">PHASE I // LE CALICE DORMANT</strong>
+          </div>
+          <div style="text-align:center;">
+            <span style="color:var(--text-on-dark-muted); font-size:0.68rem;">ALCHIMIE FLORALE:</span><br>
+            <strong style="color:var(--accent-pollen); font-size:0.85rem;">ROSA GALLICA &bull; GRASSE RESERVE</strong>
+          </div>
+          <div style="text-align:right;">
+            <span style="color:var(--text-on-dark-muted); font-size:0.68rem;">ÉTAT D'ÉCLOSION:</span><br>
+            <div id="bloom-progress-percent" class="bloom-progress-badge" style="font-size:1.5rem;">DORMANT</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         4. The Expanded 8-Specimen Florilegium (Rare Floral Archive)
+         ========================================================================= -->
+    <section id="florilegium" class="section section-border-top" style="background-color: var(--bg-surface-warm);">
+      <div class="container">
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:2rem; margin-bottom:2.5rem;">
+          <div>
+            <div class="text-taxonomy" style="margin-bottom:0.75rem;">THE PERPETUAL ARCHIVE &bull; VOL. IV</div>
+            <h2 class="text-section-display">
+              The Grand <em>Florilegium</em>
+            </h2>
+            <p class="text-body-editorial" style="margin-top:0.75rem;">
+              Eight rare architectural floral sculptures preserved at their pinnacle. Filter by botanical origin and ecological family.
+            </p>
+          </div>
+
+          <!-- Florilegium Filter Buttons -->
+          <div class="florilegium-filters" role="tablist">
+            <button class="filter-pill active" data-florilegium-filter="all">All Specimens (08)</button>
+            <button class="filter-pill" data-florilegium-filter="cryo">Alpine Cryo</button>
+            <button class="filter-pill" data-florilegium-filter="volcanic">Volcanic Basalt</button>
+            <button class="filter-pill" data-florilegium-filter="ikebana">Heritage Ikebana</button>
+          </div>
+        </div>
+
+        <!-- Living Botanical Resonance HUD (UI/UX Interactive System) -->
+        <div class="botanical-resonance-hud">
+          <div class="resonance-info">
+            <span class="resonance-pulse-dot"></span>
+            <span class="resonance-label">Botanical Resonance:</span>
+            <span id="resonance-specimen-name" class="resonance-specimen-name">Royal Peony Blush</span>
+          </div>
+
+          <div class="resonance-swatches" title="Select a floral spectrum to resonate with the atelier ambiance">
+            <button type="button" class="resonance-swatch active" data-palette="peony" style="background:#E8A8B4;" aria-label="Resonate with Royal Peony"></button>
+            <button type="button" class="resonance-swatch" data-palette="rose" style="background:#B32638;" aria-label="Resonate with Velvet Damask Rose"></button>
+            <button type="button" class="resonance-swatch" data-palette="anthurium" style="background:#3A262C;" aria-label="Resonate with Obsidian Anthurium"></button>
+            <button type="button" class="resonance-swatch" data-palette="ikebana" style="background:#4E6850;" aria-label="Resonate with Kyoto Ikebana"></button>
+            <button type="button" class="resonance-swatch" data-palette="poppy" style="background:#D48E2E;" aria-label="Resonate with Golden Poppy"></button>
+            <button type="button" class="resonance-swatch" data-palette="blue-poppy" style="background:#2C6E98;" aria-label="Resonate with Celestial Blue Poppy"></button>
+            <button type="button" class="resonance-swatch" data-palette="camellia" style="background:#697F6E;" aria-label="Resonate with Porcelain Camellia"></button>
+            <button type="button" class="resonance-swatch" data-palette="dahlia" style="background:#6E1535;" aria-label="Resonate with Velvet Dahlia"></button>
+            <button type="button" class="resonance-swatch" data-palette="waterlily" style="background:#2D6B5E;" aria-label="Resonate with Floating Waterlily"></button>
+          </div>
+
+          <div id="resonance-spectrum-badge" class="resonance-spectrum-badge">
+            640nm &bull; SANGUINE
+          </div>
+        </div>
+
+        <div class="florilegium-grid">
+          <!-- Specimen 01: Sanguine Rose -->
+          <article class="specimen-card" data-florilegium-category="all cryo" data-botanical-hue="rose">
+            <div class="botanical-art-frame">
+              <svg class="corner-filigree top-left" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree top-right" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree bottom-left" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree bottom-right" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+
+              <div class="frame-inner-matting">
+                <div class="specimen-img-wrapper">
+                  <img class="specimen-img" src="assets/images/specimen-rose.webp" alt="Rosa Gallica Velours dark crimson garden rose sculpture" loading="lazy" decoding="async">
+                  <div class="specimen-badge">Specimen 01 // Rose</div>
+                  <div class="frame-embossed-seal" title="Éphémère Herbarium Seal">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 6v12M8 10l4-4 4 4"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="frame-plaque-strip">
+                <span>PL. 01 &bull; DAMASK</span>
+                <strong>680nm // SANGUINE</strong>
+              </div>
+            </div>
+
+            <div class="specimen-info">
+              <div class="text-taxonomy">Rosa Gallica Velours</div>
+              <h3 class="font-display" style="font-size:1.35rem; font-weight:500;">The Velvet Sanguine</h3>
+              <p class="text-caption" style="color:var(--text-secondary); font-size:0.825rem;">
+                Cold-pressed damask rose petals preserved in crystalline glacial resin.
+              </p>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem; padding-top:0.75rem; border-top:1px solid var(--border-hairline);">
+                <span class="text-taxonomy-muted">EDITION: 1/1</span>
+                <a href="#concierge" class="editorial-link">Acquire &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Specimen 02: Obsidian Anthurium -->
+          <article class="specimen-card" data-florilegium-category="all volcanic" data-botanical-hue="anthurium">
+            <div class="botanical-art-frame">
+              <svg class="corner-filigree top-left" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree top-right" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree bottom-left" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree bottom-right" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+
+              <div class="frame-inner-matting">
+                <div class="specimen-img-wrapper">
+                  <img class="specimen-img" src="assets/images/specimen-anthurium.webp" alt="Anthurium Nigrum black glossy sculptural flower" loading="lazy" decoding="async">
+                  <div class="specimen-badge">Specimen 02 // Anthurium</div>
+                  <div class="frame-embossed-seal" title="Éphémère Herbarium Seal">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 6v12M8 10l4-4 4 4"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="frame-plaque-strip">
+                <span>PL. 02 &bull; VOLCANIC</span>
+                <strong>410nm // BASALT</strong>
+              </div>
+            </div>
+
+            <div class="specimen-info">
+              <div class="text-taxonomy">Anthurium Nigrum</div>
+              <h3 class="font-display" style="font-size:1.35rem; font-weight:500;">Obsidian Spathe</h3>
+              <p class="text-caption" style="color:var(--text-secondary); font-size:0.825rem;">
+                Heart-shaped volcanic spathe with leather patent luster in mineral wax stasis.
+              </p>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem; padding-top:0.75rem; border-top:1px solid var(--border-hairline);">
+                <span class="text-taxonomy-muted">EDITION: 1/1</span>
+                <a href="#concierge" class="editorial-link">Acquire &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Specimen 03: Ikebana Arrangement -->
+          <article class="specimen-card" data-florilegium-category="all ikebana" data-botanical-hue="ikebana">
+            <div class="botanical-art-frame">
+              <svg class="corner-filigree top-left" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree top-right" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree bottom-left" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree bottom-right" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+
+              <div class="frame-inner-matting">
+                <div class="specimen-img-wrapper">
+                  <img class="specimen-img" src="assets/images/specimen-ikebana.webp" alt="Ikebana botanical arrangement with wild branches in ceramic vessel" loading="lazy" decoding="async">
+                  <div class="specimen-badge">Specimen 03 // Ikebana</div>
+                  <div class="frame-embossed-seal" title="Éphémère Herbarium Seal">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 6v12M8 10l4-4 4 4"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="frame-plaque-strip">
+                <span>PL. 03 &bull; HERITAGE</span>
+                <strong>530nm // BAMBOO</strong>
+              </div>
+            </div>
+
+            <div class="specimen-info">
+              <div class="text-taxonomy">Orchis Imperialis</div>
+              <h3 class="font-display" style="font-size:1.35rem; font-weight:500;">Branches of Kyoto</h3>
+              <p class="text-caption" style="color:var(--text-secondary); font-size:0.825rem;">
+                Wabi-sabi equilibrium between orchids, charred boughs, and porcelain.
+              </p>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem; padding-top:0.75rem; border-top:1px solid var(--border-hairline);">
+                <span class="text-taxonomy-muted">EDITION: 1/1</span>
+                <a href="#concierge" class="editorial-link">Acquire &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Specimen 04: Golden Poppy -->
+          <article class="specimen-card" data-florilegium-category="all cryo" data-botanical-hue="poppy">
+            <div class="botanical-art-frame">
+              <svg class="corner-filigree top-left" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree top-right" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree bottom-left" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree bottom-right" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+
+              <div class="frame-inner-matting">
+                <div class="specimen-img-wrapper">
+                  <img class="specimen-img" src="assets/images/specimen-poppy.webp" alt="Papaver Somniferum delicate poppy petals with pollen" loading="lazy" decoding="async">
+                  <div class="specimen-badge">Specimen 04 // Poppy</div>
+                  <div class="frame-embossed-seal" title="Éphémère Herbarium Seal">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 6v12M8 10l4-4 4 4"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="frame-plaque-strip">
+                <span>PL. 04 &bull; SAFFRON</span>
+                <strong>590nm // AMBER</strong>
+              </div>
+            </div>
+
+            <div class="specimen-info">
+              <div class="text-taxonomy">Papaver Somniferum</div>
+              <h3 class="font-display" style="font-size:1.35rem; font-weight:500;">Pollen &amp; Silk</h3>
+              <p class="text-caption" style="color:var(--text-secondary); font-size:0.825rem;">
+                Paper-thin pleated petals cradling a wild crown of golden saffron stamen.
+              </p>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem; padding-top:0.75rem; border-top:1px solid var(--border-hairline);">
+                <span class="text-taxonomy-muted">EDITION: 1/1</span>
+                <a href="#concierge" class="editorial-link">Acquire &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Specimen 05: Himalayan Blue Poppy -->
+          <article class="specimen-card" data-florilegium-category="all cryo" data-botanical-hue="blue-poppy">
+            <div class="botanical-art-frame">
+              <svg class="corner-filigree top-left" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree top-right" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree bottom-left" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree bottom-right" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+
+              <div class="frame-inner-matting">
+                <div class="specimen-img-wrapper">
+                  <img class="specimen-img" src="assets/images/specimen-blue-poppy.webp" alt="Meconopsis betonicifolia rare Himalayan blue poppy sculpture" loading="lazy" decoding="async">
+                  <div class="specimen-badge">Specimen 05 // Blue Poppy</div>
+                  <div class="frame-embossed-seal" title="Éphémère Herbarium Seal">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 6v12M8 10l4-4 4 4"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="frame-plaque-strip">
+                <span>PL. 05 &bull; HIMALAYAN</span>
+                <strong>475nm // CELESTIAL</strong>
+              </div>
+            </div>
+
+            <div class="specimen-info">
+              <div class="text-taxonomy">Meconopsis betonicifolia</div>
+              <h3 class="font-display" style="font-size:1.35rem; font-weight:500;">The Celestial Azure</h3>
+              <p class="text-caption" style="color:var(--text-secondary); font-size:0.825rem;">
+                Harvested at 4,200m altitude in Bhutan. Rare sky-blue anthocyanin pigment.
+              </p>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem; padding-top:0.75rem; border-top:1px solid var(--border-hairline);">
+                <span class="text-taxonomy-muted">EDITION: 1/1</span>
+                <a href="#concierge" class="editorial-link">Acquire &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Specimen 06: Porcelain Camellia -->
+          <article class="specimen-card" data-florilegium-category="all ikebana" data-botanical-hue="camellia">
+            <div class="botanical-art-frame">
+              <svg class="corner-filigree top-left" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree top-right" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree bottom-left" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree bottom-right" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+
+              <div class="frame-inner-matting">
+                <div class="specimen-img-wrapper">
+                  <img class="specimen-img" src="assets/images/specimen-camellia.webp" alt="Camellia japonica white porcelain camellia" loading="lazy" decoding="async">
+                  <div class="specimen-badge">Specimen 06 // Camellia</div>
+                  <div class="frame-embossed-seal" title="Éphémère Herbarium Seal">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 6v12M8 10l4-4 4 4"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="frame-plaque-strip">
+                <span>PL. 06 &bull; ALBA</span>
+                <strong>510nm // PEARL</strong>
+              </div>
+            </div>
+
+            <div class="specimen-info">
+              <div class="text-taxonomy">Camellia japonica Alba</div>
+              <h3 class="font-display" style="font-size:1.35rem; font-weight:500;">Porcelain Solitude</h3>
+              <p class="text-caption" style="color:var(--text-secondary); font-size:0.825rem;">
+                Geometric concentric white petals with pure alabaster density.
+              </p>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem; padding-top:0.75rem; border-top:1px solid var(--border-hairline);">
+                <span class="text-taxonomy-muted">EDITION: 1/1</span>
+                <a href="#concierge" class="editorial-link">Acquire &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Specimen 07: Velvet Crimson Dahlia -->
+          <article class="specimen-card" data-florilegium-category="all volcanic" data-botanical-hue="dahlia">
+            <div class="botanical-art-frame">
+              <svg class="corner-filigree top-left" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree top-right" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree bottom-left" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree bottom-right" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+
+              <div class="frame-inner-matting">
+                <div class="specimen-img-wrapper">
+                  <img class="specimen-img" src="assets/images/specimen-dahlia.webp" alt="Dark velvet red dahlia botanical sculpture" loading="lazy" decoding="async">
+                  <div class="specimen-badge">Specimen 07 // Dahlia</div>
+                  <div class="frame-embossed-seal" title="Éphémère Herbarium Seal">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 6v12M8 10l4-4 4 4"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="frame-plaque-strip">
+                <span>PL. 07 &bull; SANGUIS</span>
+                <strong>660nm // BURGUNDY</strong>
+              </div>
+            </div>
+
+            <div class="specimen-info">
+              <div class="text-taxonomy">Dahlia Imperialis Sanguis</div>
+              <h3 class="font-display" style="font-size:1.35rem; font-weight:500;">Midnight Rosette</h3>
+              <p class="text-caption" style="color:var(--text-secondary); font-size:0.825rem;">
+                Dozens of spiraling velvet ray florets in deep burgundy black.
+              </p>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem; padding-top:0.75rem; border-top:1px solid var(--border-hairline);">
+                <span class="text-taxonomy-muted">EDITION: 1/1</span>
+                <a href="#concierge" class="editorial-link">Acquire &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Specimen 08: Mystical Waterlily -->
+          <article class="specimen-card" data-florilegium-category="all cryo" data-botanical-hue="waterlily">
+            <div class="botanical-art-frame">
+              <svg class="corner-filigree top-left" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree top-right" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree bottom-left" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+              <svg class="corner-filigree bottom-right" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+
+              <div class="frame-inner-matting">
+                <div class="specimen-img-wrapper">
+                  <img class="specimen-img" src="assets/images/specimen-waterlily.webp" alt="Nymphaea alba white aquatic waterlily bloom" loading="lazy" decoding="async">
+                  <div class="specimen-badge">Specimen 08 // Waterlily</div>
+                  <div class="frame-embossed-seal" title="Éphémère Herbarium Seal">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 6v12M8 10l4-4 4 4"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="frame-plaque-strip">
+                <span>PL. 08 &bull; AQUATIC</span>
+                <strong>500nm // JADE</strong>
+              </div>
+            </div>
+
+            <div class="specimen-info">
+              <div class="text-taxonomy">Nymphaea alba</div>
+              <h3 class="font-display" style="font-size:1.35rem; font-weight:500;">Floating Alabaster</h3>
+              <p class="text-caption" style="color:var(--text-secondary); font-size:0.825rem;">
+                Floating night aquatic bloom suspended in clear purified bio-glycerin.
+              </p>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem; padding-top:0.75rem; border-top:1px solid var(--border-hairline);">
+                <span class="text-taxonomy-muted">EDITION: 1/1</span>
+                <a href="#concierge" class="editorial-link">Acquire &rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. L'Alchimie Florale: Four Sensory Whispers of Haute Floristry
+         Visual storytelling through authentic macro floral photography
+         ========================================================================= -->
+    <section id="alchemy" class="section section-border-top" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div style="max-width:760px; margin-bottom:3.5rem;">
+          <div class="text-taxonomy" style="margin-bottom:0.75rem;">
+            L'ALCHIMIE FLORALE &bull; SENSUAL ANTHOLOGY
+          </div>
+          <h2 class="text-section-display">
+            Whispers of <em>perpetual grace</em>.
+          </h2>
+          <p class="text-body-editorial" style="margin-top:0.75rem;">
+            Before a flower is sculpted into eternity, we listen to its four silent languages: the velvet weave of its petals, the golden stamen core, the crystalline dawn dew, and the Japanese architectural bough.
+          </p>
+        </div>
+
+        <div class="alchemy-visual-grid">
+          <!-- Whisper 01: The Velvet Damask -->
+          <article class="alchemy-card">
+            <div class="alchemy-media-box">
+              <img class="alchemy-img" src="assets/images/specimen-rose.webp" alt="Macro texture of real velvet Damask rose petals" loading="lazy" decoding="async">
+              <div class="specimen-badge">Whisper I // Le Velours</div>
+            </div>
+            <div class="alchemy-info">
+              <div class="text-taxonomy">Damask Petal Weave</div>
+              <h3 class="font-display" style="font-size:1.3rem; font-weight:500;">The Velvet Damascène</h3>
+              <p class="text-caption" style="color:var(--text-secondary); font-size:0.825rem; line-height:1.6;">
+                Microscopic conical cells absorb and scatter ambient light, yielding the tactile sensation of vintage silk velvet.
+              </p>
+            </div>
+          </article>
+
+          <!-- Whisper 02: Golden Stamen Heart -->
+          <article class="alchemy-card">
+            <div class="alchemy-media-box">
+              <img class="alchemy-img" src="assets/images/specimen-poppy.webp" alt="Macro golden stamen and pollen of a delicate poppy" loading="lazy" decoding="async">
+              <div class="specimen-badge">Whisper II // Le Pollen</div>
+            </div>
+            <div class="alchemy-info">
+              <div class="text-taxonomy">Saffron Core</div>
+              <h3 class="font-display" style="font-size:1.3rem; font-weight:500;">Le Coeur de Pollen</h3>
+              <p class="text-caption" style="color:var(--text-secondary); font-size:0.825rem; line-height:1.6;">
+                The sacred golden altar holding wild saffron dust and sun-warmed amber resins, suspended in silent reverence.
+              </p>
+            </div>
+          </article>
+
+          <!-- Whisper 03: Perpetual Dewdrop -->
+          <article class="alchemy-card">
+            <div class="alchemy-media-box">
+              <img class="alchemy-img" src="assets/images/macro-dewdrop.webp" alt="Crystalline morning water droplets resting on real rose petals" loading="lazy" decoding="async">
+              <div class="specimen-badge">Whisper III // La Rosée</div>
+            </div>
+            <div class="alchemy-info">
+              <div class="text-taxonomy">Crystalline Prism</div>
+              <h3 class="font-display" style="font-size:1.3rem; font-weight:500;">La Rosée Éternelle</h3>
+              <p class="text-caption" style="color:var(--text-secondary); font-size:0.825rem; line-height:1.6;">
+                Pure dawn droplets crystallized in optical polymer, capturing forever the morning reflection of our Paris atelier.
+              </p>
+            </div>
+          </article>
+
+          <!-- Whisper 04: The Kyoto Bough -->
+          <article class="alchemy-card">
+            <div class="alchemy-media-box">
+              <img class="alchemy-img" src="assets/images/specimen-ikebana.webp" alt="Heritage Japanese ikebana arrangement with wild boughs in porcelain" loading="lazy" decoding="async">
+              <div class="specimen-badge">Whisper IV // La Branche</div>
+            </div>
+            <div class="alchemy-info">
+              <div class="text-taxonomy">Wabi-Sabi Equilibrium</div>
+              <h3 class="font-display" style="font-size:1.3rem; font-weight:500;">L'Équilibre de Kyoto</h3>
+              <p class="text-caption" style="color:var(--text-secondary); font-size:0.825rem; line-height:1.6;">
+                Charred plum boughs and wild mountain moss balancing ephemeral blossoms according to centuries of Japanese ikebana discipline.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5B. LE JARDIN DES FLORAISONS: THE CONTINUOUS BLOOMING TAPESTRY
+         Scroll-driven blooming botanical procession with authentic rare flora
+         ========================================================================= -->
+    <section id="living-garden" class="living-garden-section">
+      <div class="container" style="text-align:center; max-width:820px; margin-bottom:4rem;">
+        <div class="text-taxonomy" style="color:var(--accent-pollen); margin-bottom:0.75rem;">
+          LE JARDIN ÉTERNEL &bull; FLORAL PROCESSION
+        </div>
+        <h2 class="text-section-display">
+          A living tapestry of <em>perpetual blossom</em>.
+        </h2>
+        <p class="text-body-editorial" style="margin-top:0.75rem;">
+          As you wander down our greenhouse gallery, witness the sequential unfurling of rare botanical masterpieces. Each petal expands to greet your presence.
+        </p>
+      </div>
+
+      <div class="living-garden-container">
+        <!-- Central Undulating Golden Vine Stalk -->
+        <svg class="garden-central-vine" viewBox="0 0 200 1200" fill="none" preserveAspectRatio="none" aria-hidden="true">
+          <path id="garden-stem-path" d="M 100 0 Q 170 150 100 300 T 30 600 T 170 900 T 100 1200" stroke="var(--frame-gold-bright)" stroke-width="2" opacity="0.6"/>
+          <path d="M 100 150 Q 150 120 180 140 C 160 160 130 150 100 150 Z" fill="var(--frame-gold-bright)" opacity="0.5"/>
+          <path d="M 100 450 Q 50 420 20 440 C 40 460 70 450 100 450 Z" fill="var(--frame-gold-bright)" opacity="0.5"/>
+          <path d="M 100 750 Q 150 720 180 740 C 160 760 130 750 100 750 Z" fill="var(--frame-gold-bright)" opacity="0.5"/>
+          <path d="M 100 1050 Q 50 1020 20 1040 C 40 1060 70 1050 100 1050 Z" fill="var(--frame-gold-bright)" opacity="0.5"/>
+        </svg>
+
+        <!-- 5 Sequential Blooming Flowers Along the Vine -->
+        <!-- Garden Flower 1: Left Wing - Paeonia -->
+        <div class="garden-bloom-item garden-item-left" data-bloom-index="1" data-specimen-id="peony">
+          <div class="garden-bloom-card">
+            <div class="garden-flower-halo"></div>
+            <div class="garden-bloom-frame">
+              <svg class="corner-filigree top-left" viewBox="0 0 32 32" fill="none"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="3" r="2" fill="currentColor"/></svg>
+              <svg class="corner-filigree top-right" viewBox="0 0 32 32" fill="none"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="3" r="2" fill="currentColor"/></svg>
+              <svg class="corner-filigree bottom-left" viewBox="0 0 32 32" fill="none"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="3" r="2" fill="currentColor"/></svg>
+              <svg class="corner-filigree bottom-right" viewBox="0 0 32 32" fill="none"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="3" r="2" fill="currentColor"/></svg>
+              
+              <div class="garden-img-circle">
+                <img src="assets/images/hero-peony.webp" alt="Paeonia Suffruticosa Blooming" class="garden-img" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="garden-bloom-caption">
+              <span class="text-taxonomy" style="color:var(--accent-pollen);">I &bull; L'AURORE DE KYOTO</span>
+              <h3 class="font-display" style="font-size:1.4rem;">Paeonia Suffruticosa</h3>
+              <p class="text-caption" style="font-style:italic; color:var(--text-secondary); max-width:28ch;">
+                "Dans l'ombre des collines, le calice s'éveille au premier souffle du matin."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Garden Flower 2: Right Wing - Blue Poppy -->
+        <div class="garden-bloom-item garden-item-right" data-bloom-index="2" data-specimen-id="blue-poppy">
+          <div class="garden-bloom-card">
+            <div class="garden-flower-halo"></div>
+            <div class="garden-bloom-frame">
+              <svg class="corner-filigree top-left" viewBox="0 0 32 32" fill="none"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="3" r="2" fill="currentColor"/></svg>
+              <svg class="corner-filigree top-right" viewBox="0 0 32 32" fill="none"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="3" r="2" fill="currentColor"/></svg>
+              <svg class="corner-filigree bottom-left" viewBox="0 0 32 32" fill="none"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="3" r="2" fill="currentColor"/></svg>
+              <svg class="corner-filigree bottom-right" viewBox="0 0 32 32" fill="none"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="3" r="2" fill="currentColor"/></svg>
+              
+              <div class="garden-img-circle">
+                <img src="assets/images/specimen-blue-poppy.webp" alt="Meconopsis Blue Poppy Blooming" class="garden-img" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="garden-bloom-caption">
+              <span class="text-taxonomy" style="color:var(--pigment-blue-poppy-azure);">II &bull; L'AZUR CÉLESTE</span>
+              <h3 class="font-display" style="font-size:1.4rem;">Meconopsis Betonicifolia</h3>
+              <p class="text-caption" style="font-style:italic; color:var(--text-secondary); max-width:28ch;">
+                "L'azur céleste s'empare des hauteurs glacées de l'Himalaya."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Garden Flower 3: Left Wing - Camellia Alba -->
+        <div class="garden-bloom-item garden-item-left" data-bloom-index="3" data-specimen-id="camellia">
+          <div class="garden-bloom-card">
+            <div class="garden-flower-halo"></div>
+            <div class="garden-bloom-frame">
+              <svg class="corner-filigree top-left" viewBox="0 0 32 32" fill="none"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="3" r="2" fill="currentColor"/></svg>
+              <svg class="corner-filigree top-right" viewBox="0 0 32 32" fill="none"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="3" r="2" fill="currentColor"/></svg>
+              <svg class="corner-filigree bottom-left" viewBox="0 0 32 32" fill="none"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="3" r="2" fill="currentColor"/></svg>
+              <svg class="corner-filigree bottom-right" viewBox="0 0 32 32" fill="none"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="3" r="2" fill="currentColor"/></svg>
+              
+              <div class="garden-img-circle">
+                <img src="assets/images/specimen-camellia.webp" alt="Camellia Japonica Alba Blooming" class="garden-img" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="garden-bloom-caption">
+              <span class="text-taxonomy" style="color:var(--frame-gold-bright);">III &bull; LA SOLITUDE D'ALBÂTRE</span>
+              <h3 class="font-display" style="font-size:1.4rem;">Camellia Japonica 'Alba'</h3>
+              <p class="text-caption" style="font-style:italic; color:var(--text-secondary); max-width:28ch;">
+                "Chaque pétale d'albâtre repose dans le silence infini du jardin de thé."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Garden Flower 4: Right Wing - Saffron Poppy -->
+        <div class="garden-bloom-item garden-item-right" data-bloom-index="4" data-specimen-id="poppy">
+          <div class="garden-bloom-card">
+            <div class="garden-flower-halo"></div>
+            <div class="garden-bloom-frame">
+              <svg class="corner-filigree top-left" viewBox="0 0 32 32" fill="none"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="3" r="2" fill="currentColor"/></svg>
+              <svg class="corner-filigree top-right" viewBox="0 0 32 32" fill="none"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="3" r="2" fill="currentColor"/></svg>
+              <svg class="corner-filigree bottom-left" viewBox="0 0 32 32" fill="none"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="3" r="2" fill="currentColor"/></svg>
+              <svg class="corner-filigree bottom-right" viewBox="0 0 32 32" fill="none"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="3" r="2" fill="currentColor"/></svg>
+              
+              <div class="garden-img-circle">
+                <img src="assets/images/specimen-poppy.webp" alt="Papaver Saffron Poppy Blooming" class="garden-img" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="garden-bloom-caption">
+              <span class="text-taxonomy" style="color:var(--pigment-poppy-saffron);">IV &bull; LA COURONNE D'OR</span>
+              <h3 class="font-display" style="font-size:1.4rem;">Papaver Somniferum</h3>
+              <p class="text-caption" style="font-style:italic; color:var(--text-secondary); max-width:28ch;">
+                "L'or du pollen capture la lumière divine au zénith du midi."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Garden Flower 5: Left Wing - Dahlia Midnight -->
+        <div class="garden-bloom-item garden-item-left" data-bloom-index="5" data-specimen-id="dahlia">
+          <div class="garden-bloom-card">
+            <div class="garden-flower-halo"></div>
+            <div class="garden-bloom-frame">
+              <svg class="corner-filigree top-left" viewBox="0 0 32 32" fill="none"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="3" r="2" fill="currentColor"/></svg>
+              <svg class="corner-filigree top-right" viewBox="0 0 32 32" fill="none"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="3" r="2" fill="currentColor"/></svg>
+              <svg class="corner-filigree bottom-left" viewBox="0 0 32 32" fill="none"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="3" r="2" fill="currentColor"/></svg>
+              <svg class="corner-filigree bottom-right" viewBox="0 0 32 32" fill="none"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="3" r="2" fill="currentColor"/></svg>
+              
+              <div class="garden-img-circle">
+                <img src="assets/images/specimen-dahlia.webp" alt="Dahlia Imperialis Midnight Blooming" class="garden-img" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="garden-bloom-caption">
+              <span class="text-taxonomy" style="color:var(--pigment-rose-crimson);">V &bull; LA ROSACE NOCTURNE</span>
+              <h3 class="font-display" style="font-size:1.4rem;">Dahlia Imperialis</h3>
+              <p class="text-caption" style="font-style:italic; color:var(--text-secondary); max-width:28ch;">
+                "Une spirale géométrique parfaite défiant la nuit et le froid des forêts d'Oaxaca."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5C. La Danse des Fleurs: The Suspended Botanical Sanctuary
+         Cinematic multi-plane scroll-driven sanctuary with REAL floating flowers
+         ========================================================================= -->
+    <section id="sanctuary-stage" class="sanctuary-section">
+      <div class="container" style="text-align:center; max-width:800px; margin-bottom:4rem;">
+        <div class="text-taxonomy" style="color:var(--accent-botanical); margin-bottom:0.75rem;">
+          SANCTUAIRE EN SUSPENSION &bull; LA DANSE DES FLEURS
+        </div>
+        <h2 class="text-section-display">
+          In our glasshouse, <em>gravity is dismissed</em>.
+        </h2>
+        <p class="text-body-editorial" style="margin-top:0.75rem;">
+          Rare botanical sculptures drift in zero-gravity equilibrium. Each angle catches the amber sunlight of late afternoon in Paris, revealing hidden folds of petaline architecture.
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="sanctuary-stage-container">
+          <!-- Floating Specimen 1: Peony Reverie -->
+          <div class="sanctuary-floating-item sanctuary-item-1" data-parallax-speed="0.18" data-parallax-depth="1.2">
+            <div class="botanical-art-frame">
+              <div class="frame-inner-matting">
+                <img src="assets/images/hero-peony.webp" alt="Real dark velvety peony botanical sculpture" loading="lazy" decoding="async">
+              </div>
+              <div class="frame-plaque-strip">
+                <span>SANCTUARY N° 01</span>
+                <strong>PAEONIA // KYOTO</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Specimen 2: Celestial Azure -->
+          <div class="sanctuary-floating-item sanctuary-item-2" data-parallax-speed="-0.22" data-parallax-depth="0.9">
+            <div class="botanical-art-frame">
+              <div class="frame-inner-matting">
+                <img src="assets/images/specimen-blue-poppy.webp" alt="Rare Himalayan blue poppy sculpture" loading="lazy" decoding="async">
+              </div>
+              <div class="frame-plaque-strip">
+                <span>SANCTUARY N° 02</span>
+                <strong>MECONOPSIS // BHUTAN</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Specimen 3: White Camellia Solitude -->
+          <div class="sanctuary-floating-item sanctuary-item-3" data-parallax-speed="0.25" data-parallax-depth="1.4">
+            <div class="botanical-art-frame">
+              <div class="frame-inner-matting">
+                <img src="assets/images/specimen-camellia.webp" alt="Porcelain white camellia sculpture" loading="lazy" decoding="async">
+              </div>
+              <div class="frame-plaque-strip">
+                <span>SANCTUARY N° 03</span>
+                <strong>CAMELLIA // ALBA</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Specimen 4: Damask Velvet Rose -->
+          <div class="sanctuary-floating-item sanctuary-item-4" data-parallax-speed="-0.15" data-parallax-depth="1.1">
+            <div class="botanical-art-frame">
+              <div class="frame-inner-matting">
+                <img src="assets/images/specimen-rose.webp" alt="Velvet crimson damask garden rose sculpture" loading="lazy" decoding="async">
+              </div>
+              <div class="frame-plaque-strip">
+                <span>SANCTUARY N° 04</span>
+                <strong>ROSA // GRASSE</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         6. Curatorial Manifesto Section (Split Magazine Essay)
+         ========================================================================= -->
+    <section id="manifesto" class="section section-border-top" style="background-color: var(--bg-surface-warm);">
+      <div class="container">
+        <div class="manifesto-editorial-grid">
+          <!-- Process Photograph with Museum Botanical Frame -->
+          <div class="manifesto-image-wrapper botanical-art-frame" data-botanical-hue="ikebana">
+            <svg class="corner-filigree top-left" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+            <svg class="corner-filigree top-right" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+            <svg class="corner-filigree bottom-left" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+            <svg class="corner-filigree bottom-right" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 29 C3 14 14 3 29 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 19 C3 10 10 3 19 3" stroke="currentColor" stroke-width="0.8" opacity="0.65"/><circle cx="3" cy="3" r="2" fill="currentColor"/><path d="M10 3 C12 6 15 8 18 8 C15 11 12 10 10 3 Z" fill="currentColor" opacity="0.5"/></svg>
+
+            <div class="frame-inner-matting">
+              <img src="assets/images/atelier-craft.webp" alt="Florist master sculpting rare botanical stems in the Kyoto atelier" loading="lazy" decoding="async">
+              <div class="manifesto-caption">
+                <span>FIGURE 01 // THE SCULPTOR'S HAND AT HIGASHIYAMA ATELIER, KYOTO.</span>
+              </div>
+            </div>
+
+            <div class="frame-plaque-strip">
+              <span>ATELIER ARCHIVE &bull; HIGASHIYAMA</span>
+              <strong>KYOTO // METIER D'ART</strong>
+            </div>
+          </div>
+
+
+          <!-- Editorial Narrative -->
+          <div>
+            <div class="text-taxonomy" style="margin-bottom:1rem;">THE ATELIER MANIFESTO</div>
+            <h2 class="text-section-display">
+              The philosophy of <em>fragility as monument</em>.
+            </h2>
+
+            <div class="botanical-quote">
+              "A flower does not exist to be permanent. Its transcendent beauty lies strictly in the razor-thin margin before it withers."
+            </div>
+
+            <p class="text-body-editorial drop-cap">
+              In traditional floristry, arrangements are treated as disposable decor. At ÉPHÉMÈRE, we approach flowers with the reverence of sculptors and botanists. Inspired by the Japanese principle of <em>Ichi-go ichi-e</em> (one meeting, one lifetime), our floral artists work with rare botanical varietals that bloom once every seven years.
+            </p>
+
+            <p class="text-body-editorial" style="margin-top:1rem;">
+              Through advanced nitrogen stasis and organic vegetal sap replacement, we suspend each petal at the exact zenith of its bloom. Neither artificial nor dead, our botanical sculptures retain their velvety tactile texture, cellular moisture, and scent profile for decades.
+            </p>
+
+            <div style="margin-top:2rem;">
+              <a href="#concierge" class="editorial-link">Request Curatorial Monograph &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         7. Le Carnet des Senteurs: Olfactory Anthology of Suspended Flora
+         Visual olfactory poetry replacing sterile data tables
+         ========================================================================= -->
+    <section id="scents" class="section section-border-top" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div style="max-width:760px; margin-bottom:3.5rem;">
+          <div class="text-taxonomy" style="margin-bottom:0.75rem;">
+            LE CARNET DES SENTEURS &bull; HARMONIE OLFACTIVE
+          </div>
+          <h2 class="text-section-display">
+            The fragrance of <em>suspended memory</em>.
+          </h2>
+          <p class="text-body-editorial" style="margin-top:0.75rem;">
+            A flower's scent is its invisible soul. Through organic botanical sap infusions, our sculptures continue to gently breathe their natural aromatic chords into the room.
+          </p>
+        </div>
+
+        <div class="scent-anthology-grid">
+          <!-- Scent 01: Rose Damascène -->
+          <article class="scent-card" data-botanical-hue="rose">
+            <div class="scent-img-wrapper">
+              <img class="scent-img" src="assets/images/specimen-rose.webp" alt="Damask Rose sculpture with morning dew" loading="lazy" decoding="async">
+            </div>
+            <div>
+              <div class="text-taxonomy">Accord N° 01 &bull; Grasse</div>
+              <h3 class="font-display" style="font-size:1.35rem; font-weight:500; margin-top:0.25rem;">Rose Sanguine de Mai</h3>
+              <p class="text-caption" style="color:var(--text-secondary); margin-top:0.4rem; font-style:italic;">
+                "A gentle dawn stroll through private terraced rose gardens above the Mediterranean."
+              </p>
+            </div>
+            <div class="scent-chords-box">
+              <div class="chord-row">
+                <span class="chord-lbl">TOP:</span>
+                <span>Alpine morning air, cold dew, blackcurrant bud</span>
+              </div>
+              <div class="chord-row">
+                <span class="chord-lbl">HEART:</span>
+                <span>Crushed damask rose otto, velvety crimson petals</span>
+              </div>
+              <div class="chord-row">
+                <span class="chord-lbl">BASE:</span>
+                <span>Sun-warmed French cedar, honeyed amber resin</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Scent 02: Ikebana & Kyoto Woods -->
+          <article class="scent-card" data-botanical-hue="ikebana">
+            <div class="scent-img-wrapper">
+              <img class="scent-img" src="assets/images/specimen-ikebana.webp" alt="Kyoto Ikebana arrangement in ceramic vessel" loading="lazy" decoding="async">
+            </div>
+            <div>
+              <div class="text-taxonomy">Accord N° 02 &bull; Kyoto</div>
+              <h3 class="font-display" style="font-size:1.35rem; font-weight:500; margin-top:0.25rem;">Bois de Prunier &amp; Mousse</h3>
+              <p class="text-caption" style="color:var(--text-secondary); margin-top:0.4rem; font-style:italic;">
+                "The quiet meditative aroma of a temple pavilion after fresh spring rain."
+              </p>
+            </div>
+            <div class="scent-chords-box">
+              <div class="chord-row">
+                <span class="chord-lbl">TOP:</span>
+                <span>Petrichor, wet temple moss, cold river stones</span>
+              </div>
+              <div class="chord-row">
+                <span class="chord-lbl">HEART:</span>
+                <span>Porcelain white camellia, wild orchid dew</span>
+              </div>
+              <div class="chord-row">
+                <span class="chord-lbl">BASE:</span>
+                <span>Charred hinoki bough, aged smoked clay</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Scent 03: Himalayan Azure -->
+          <article class="scent-card" data-botanical-hue="blue-poppy">
+            <div class="scent-img-wrapper">
+              <img class="scent-img" src="assets/images/specimen-blue-poppy.webp" alt="Himalayan Blue Poppy in mountain mist" loading="lazy" decoding="async">
+            </div>
+            <div>
+              <div class="text-taxonomy">Accord N° 03 &bull; Bhutan</div>
+              <h3 class="font-display" style="font-size:1.35rem; font-weight:500; margin-top:0.25rem;">Brume Céleste d'Altitude</h3>
+              <p class="text-caption" style="color:var(--text-secondary); margin-top:0.4rem; font-style:italic;">
+                "High mountain silence at 4,200 meters, where blue poppies greet the ice."
+              </p>
+            </div>
+            <div class="scent-chords-box">
+              <div class="chord-row">
+                <span class="chord-lbl">TOP:</span>
+                <span>Glacial meltwater, ozonic crisp breeze</span>
+              </div>
+              <div class="chord-row">
+                <span class="chord-lbl">HEART:</span>
+                <span>Ethereal sky poppy petals, wild mountain tea</span>
+              </div>
+              <div class="chord-row">
+                <span class="chord-lbl">BASE:</span>
+                <span>Alpine cedar smoke, dried juniper resin</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Scent 04: Obsidian Anthurium -->
+          <article class="scent-card" data-botanical-hue="anthurium">
+            <div class="scent-img-wrapper">
+              <img class="scent-img" src="assets/images/specimen-anthurium.webp" alt="Dark volcanic anthurium spathe sculpture" loading="lazy" decoding="async">
+            </div>
+            <div>
+              <div class="text-taxonomy">Accord N° 04 &bull; Paris Salon</div>
+              <h3 class="font-display" style="font-size:1.35rem; font-weight:500; margin-top:0.25rem;">Nuit d'Obsidienne</h3>
+              <p class="text-caption" style="color:var(--text-secondary); margin-top:0.4rem; font-style:italic;">
+                "The dramatic architectural allure of an evening salon on Rue Saint-Honoré."
+              </p>
+            </div>
+            <div class="scent-chords-box">
+              <div class="chord-row">
+                <span class="chord-lbl">TOP:</span>
+                <span>Night-blooming tuberose, bitter green almond</span>
+              </div>
+              <div class="chord-row">
+                <span class="chord-lbl">HEART:</span>
+                <span>Patent leather spathe, spicy dark clove</span>
+              </div>
+              <div class="chord-row">
+                <span class="chord-lbl">BASE:</span>
+                <span>Volcanic basalt mineral, smoked labdanum</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         8. Haute Floral Concierge with Interactive Estimator
+         ========================================================================= -->
+    <section id="concierge" class="section section-border-top" style="background-color: var(--bg-surface-warm);">
+      <div class="container">
+        <div class="concierge-grid">
+          <div>
+            <div class="concierge-botanical-crest" aria-hidden="true">
+              <svg class="concierge-crest-svg" viewBox="0 0 80 40" fill="none">
+                <path d="M40 35 C35 22 20 18 5 22 C18 12 32 15 40 5 C48 15 62 12 75 22 C60 18 45 22 40 35 Z" fill="currentColor" fill-opacity="0.25" stroke="currentColor" stroke-width="1.2"/>
+                <circle cx="40" cy="5" r="3" fill="var(--frame-gold-bright)"/>
+                <circle cx="20" cy="18" r="2" fill="currentColor"/>
+                <circle cx="60" cy="18" r="2" fill="currentColor"/>
+                <path d="M40 5 L40 35" stroke="currentColor" stroke-width="0.8" stroke-dasharray="2 2"/>
+              </svg>
+              <span class="text-taxonomy" style="color:var(--accent-pollen);">HAUTE BOTANIQUE COMMISSIONS &bull; SALON PRIVÉ</span>
+            </div>
+            <h2 class="text-section-display">
+              Bespoke commissions for <em>private sanctuaries</em>.
+            </h2>
+            <p class="text-body-editorial" style="margin-top:1.25rem;">
+              We undertake a strictly limited number of bespoke botanical sculptures annually for private architectural estates, haute couture runway installations, and luxury cultural institutions.
+            </p>
+
+            <div class="est-output-box">
+              <div style="color:var(--accent-pollen); margin-bottom:0.5rem; letter-spacing:0.1em;">// ESTIMATED SPECIFICATIONS</div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
+                <span style="color:var(--text-on-dark-muted);">BOTANICAL ARCHITECTURE:</span>
+                <strong id="est-stems" style="color:#FAF8F5;">12–24 Botanical Studies</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
+                <span style="color:var(--text-on-dark-muted);">PRESERVATION HORIZON:</span>
+                <strong id="est-duration" style="color:var(--accent-pollen);">15+ Years Guaranteed</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span style="color:var(--text-on-dark-muted);">CURATORIAL LEAD TIME:</span>
+                <strong id="est-lead-time" style="color:#FAF8F5;">6–8 Weeks Architectural Integration</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Concierge Form -->
+          <div class="concierge-card">
+            <form id="concierge-form">
+              <div class="concierge-field">
+                <label class="concierge-label">Select Commission Scale</label>
+                <div class="estimator-radio-group">
+                  <label class="estimator-radio-label">
+                    <input type="radio" name="commission-scale" value="single">
+                    <span>Single Sculpture</span>
+                  </label>
+                  <label class="estimator-radio-label">
+                    <input type="radio" name="commission-scale" value="residence" checked>
+                    <span>Private Salon</span>
+                  </label>
+                  <label class="estimator-radio-label">
+                    <input type="radio" name="commission-scale" value="runway">
+                    <span>Haute Runway</span>
+                  </label>
+                  <label class="estimator-radio-label">
+                    <input type="radio" name="commission-scale" value="museum">
+                    <span>Museum Archive</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="concierge-field">
+                <label for="concierge-name" class="concierge-label">Patron / Curator Name</label>
+                <input id="concierge-name" class="concierge-input" type="text" placeholder="Madame Vivienne Laurent" required>
+              </div>
+
+              <div class="concierge-field">
+                <label for="concierge-email" class="concierge-label">Private Communication Address</label>
+                <input id="concierge-email" class="concierge-input" type="email" placeholder="v.laurent@residence.com" required>
+              </div>
+
+              <div class="concierge-field">
+                <label for="concierge-notes" class="concierge-label">Curatorial Commission Notes &amp; Selected Specimen</label>
+                <textarea id="concierge-notes" class="concierge-input" rows="3" placeholder="Specify desired floral specimens, space dimensions, or salon vision..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-botanical-dark" style="width:100%; margin-top:1rem;">
+                Dispatch Commission Inquiry
+              </button>
+            </form>
+
+            <div id="concierge-feedback" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       9. Colophon Footer
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <!-- Botanical Golden Frieze Header -->
+      <div class="footer-botanical-frieze" aria-hidden="true">
+        <svg class="footer-frieze-svg" viewBox="0 0 900 40" fill="none" preserveAspectRatio="none">
+          <path d="M0 20 Q150 5 300 20 T600 20 T900 20" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M0 20 Q150 35 300 20 T600 20 T900 20" stroke="currentColor" stroke-width="0.7" stroke-dasharray="4 4"/>
+          <g fill="currentColor">
+            <circle cx="150" cy="12" r="3"/>
+            <path d="M150 12 C145 6 135 10 145 15 Z"/>
+            <path d="M150 12 C155 6 165 10 155 15 Z"/>
+            <circle cx="450" cy="20" r="5" fill="var(--frame-gold-bright)"/>
+            <path d="M450 20 C440 10 425 15 440 25 Z" fill="var(--frame-gold-bright)" opacity="0.6"/>
+            <path d="M450 20 C460 10 475 15 460 25 Z" fill="var(--frame-gold-bright)" opacity="0.6"/>
+            <circle cx="750" cy="12" r="3"/>
+            <path d="M750 12 C745 6 735 10 745 15 Z"/>
+            <path d="M750 12 C755 6 765 10 755 15 Z"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="footer-inner-grid">
+        <div>
+          <div class="masthead-brand" style="margin-bottom:1.25rem;">
+            <svg class="masthead-seal" style="color:var(--accent-pollen);" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <circle cx="16" cy="16" r="14.5" stroke="currentColor" stroke-width="1"/>
+              <path d="M16 4C14 10 14 22 16 28C18 22 18 10 16 4Z" fill="currentColor" fill-opacity="0.3"/>
+            </svg>
+            <span class="masthead-title" style="color:#FAF8F5;">ÉPHÉMÈRE</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-on-dark-muted); line-height:1.6; max-width:36ch;">
+            Haute botanical sculptures and rare floral specimens. Conceived at the intersection of Japanese ikebana and European haute couture.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-head">Ateliers</div>
+          <div class="footer-links">
+            <span class="footer-link">Paris: 28 Rue Saint-Honoré</span>
+            <span class="footer-link">Kyoto: Higashiyama Sanjo</span>
+            <span class="footer-link">Alpine Cryo-Conservatory</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-head">Navigation</div>
+          <div class="footer-links">
+            <a href="#bloom-stage" class="footer-link">L'Épanouissement</a>
+            <a href="#living-garden" class="footer-link">Le Jardin Suspendu</a>
+            <a href="#florilegium" class="footer-link">The Grand Florilegium</a>
+            <a href="#alchemy" class="footer-link">Anatomy &amp; Alchemy</a>
+            <a href="#concierge" class="footer-link">Private Commissions</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-head">Seasonal Harvest</div>
+          <div class="season-pill" style="background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.15); color:#FAF8F5; margin-bottom:1rem;">
+            <span class="season-bloom-dot"></span>
+            <span>AUTOMNE / HIVER ACTIVE</span>
+          </div>
+          <p style="font-size:0.775rem; color:var(--text-on-dark-muted); line-height:1.5;">
+            Winter harvest reservations open for Tokyo &amp; London delivery.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-legal-bar">
+        <div>&copy; 2026 ÉPHÉMÈRE HAUTE BOTANIQUE SAS &bull; ALL RIGHTS RESERVED</div>
+        <div style="display:flex; gap:2rem;">
+          <a href="#manifesto" style="color:var(--text-on-dark-muted);">Ethics &amp; Harvest</a>
+          <a href="#concierge" style="color:var(--text-on-dark-muted);">Curatorial Monograph</a>
+          <a href="#florilegium" style="color:var(--text-on-dark-muted);">Provenance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts/petal-physics.js?v=perf_v402"></script>
+  <script src="scripts/specimen-dossier.js?v=perf_v402"></script>
+  <script src="scripts/real-rose-bloom.js?v=perf_v402"></script>
+  <script src="scripts/floating-sanctuary.js?v=perf_v402"></script>
+  <script src="scripts/botanical-interactions.js?v=perf_v402"></script>
+  <script src="scripts/artistic-theme.js?v=perf_v402"></script>
+  <script src="scripts/main.js?v=perf_v402"></script>
+</body>
+</html>
+
+

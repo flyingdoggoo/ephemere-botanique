@@ -1,0 +1,800 @@
+/* ==========================================================================
+   ÉPHÉMÈRE MAIN EDITORIAL LAYOUT — EXPANDED MASTERPIECE
+   Design Dials: VARIANCE: 9, MOTION: 7, DENSITY: 3.5
+   Aesthetic: Editorial Avant-Garde & Moody Botanical Art
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Container & Section Spacing
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: 1380px;
+  margin-inline: auto;
+  padding-inline: clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.section {
+  padding-block: clamp(6.5rem, 11vw, 11rem);
+  position: relative;
+}
+
+.section-border-top {
+  border-top: 1px solid var(--border-hairline);
+}
+
+.section-border-bottom {
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+/* --------------------------------------------------------------------------
+   Hero Section: Editorial Haute Floristry
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding-top: clamp(3.8rem, 6vh, 6rem); /* Proportional breathing room for floating masthead */
+  padding-bottom: clamp(2.5rem, 5vh, 5.5rem);
+  position: relative;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1.15fr;
+  gap: clamp(1.75rem, 3.5vw, 4rem);
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.hero-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 1.8vh, 1.5rem);
+  max-width: 620px;
+}
+
+/* Haute Curatorial Eyebrow */
+.hero-curatorial-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-pollen);
+}
+
+.curatorial-seal-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--accent-pollen);
+  box-shadow: 0 0 10px rgba(230, 176, 92, 0.6);
+  animation: curatorialPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes curatorialPulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.35); opacity: 0.5; }
+}
+
+/* Typographic Monument */
+.text-hero-editorial {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2.1rem, 4vw, 4.4rem);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.hero-title-accent {
+  font-style: italic;
+  font-weight: 400;
+  background: linear-gradient(135deg, var(--pigment-rose-crimson) 0%, #D44358 55%, var(--frame-gold-bright) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding-right: 0.05em;
+  filter: drop-shadow(0 2px 14px rgba(179, 38, 56, 0.15));
+}
+
+.hero-title-period {
+  -webkit-text-fill-color: var(--accent-pollen);
+  font-style: normal;
+  font-weight: 300;
+}
+
+/* Poetic Whisper (Replaces 32 words of marketing slop with 8 words of soul) */
+.hero-poetic-whisper {
+  font-family: var(--font-subdisplay);
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--accent-pollen);
+  margin: 0;
+}
+
+/* Sculptural Gateway (Focal Action) */
+.hero-gateway-row {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+.hero-sculptural-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.95rem;
+  padding: 0.9rem 2.2rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #181C19 0%, #252D26 100%);
+  color: #FAF8F5;
+  border: 1px solid var(--frame-gold-bright);
+  font-family: var(--font-subdisplay);
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(20, 24, 20, 0.15), 0 0 16px rgba(230, 176, 92, 0.15);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+}
+
+.hero-sculptural-cta:hover {
+  transform: translateY(-2px);
+  border-color: #FAF8F5;
+  box-shadow: 0 8px 28px rgba(20, 24, 20, 0.25), 0 0 24px rgba(230, 176, 92, 0.35);
+  color: #FAF8F5;
+}
+
+.cta-blossom-icon {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  max-width: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pigment-rose-crimson);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.hero-sculptural-cta:hover .cta-blossom-icon {
+  transform: rotate(72deg) scale(1.15);
+}
+
+.cta-flower-svg {
+  width: 22px;
+  height: 22px;
+  max-width: 22px;
+  max-height: 22px;
+  display: block;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 4px rgba(230, 176, 92, 0.4));
+}
+
+.cta-arrow-chariot {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--accent-pollen);
+  transition: transform 0.3s ease;
+}
+
+.hero-sculptural-cta:hover .cta-arrow-chariot {
+  transform: translateY(3px);
+}
+
+.hero-secondary-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-subdisplay);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.hero-secondary-link:hover {
+  color: var(--text-primary);
+  transform: translateX(3px);
+}
+
+.hero-secondary-link .link-arrow {
+  color: var(--accent-pollen);
+  transition: transform 0.25s ease;
+}
+
+.hero-secondary-link:hover .link-arrow {
+  transform: translateX(4px);
+}
+
+/* Hands-on Interactive Specimen Switcher */
+.hero-specimen-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-top: clamp(0.2rem, 0.8vh, 0.5rem);
+  padding-top: clamp(0.6rem, 1.2vh, 1.2rem);
+  border-top: 1px solid var(--border-hairline);
+}
+
+.selector-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.specimen-pill-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.specimen-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-hairline);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.specimen-pill:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(230, 176, 92, 0.6);
+  transform: translateY(-1px);
+}
+
+.specimen-pill.is-active {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: var(--frame-gold-bright);
+  box-shadow: 0 4px 16px rgba(230, 176, 92, 0.25);
+  transform: translateY(-2px);
+}
+
+.pill-pip {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px currentColor;
+}
+
+.pill-name {
+  font-family: var(--font-subdisplay);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.pill-sub {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.specimen-pill.is-active .pill-sub {
+  color: var(--accent-pollen);
+}
+
+@media (max-width: 540px) {
+  .hero-gateway-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .hero-sculptural-cta {
+    justify-content: center;
+  }
+}
+
+/* Museum Plate Gilded Wax Seal & Edition Chip */
+.hero-frame-curatorial-bar {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hero-edition-chip {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #FAF8F5;
+  background: rgba(20, 24, 20, 0.65);
+  backdrop-filter: blur(6px);
+  padding: 0.3rem 0.65rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(230, 176, 92, 0.4);
+}
+
+.hero-wax-seal {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  max-width: 30px;
+  color: var(--frame-gold-bright);
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+  animation: sealGentlySpin 24s linear infinite;
+  flex-shrink: 0;
+}
+
+.hero-wax-seal svg {
+  width: 100%;
+  height: 100%;
+  max-width: 30px;
+  max-height: 30px;
+  display: block;
+}
+
+@keyframes sealGentlySpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hero-plate-image {
+  transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-plate-image.is-fading {
+  opacity: 0.15;
+  transform: scale(0.96);
+}
+
+/* Hero Museum Visual Frame */
+.hero-visual-frame {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: 0 24px 60px -12px rgba(20, 24, 20, 0.28), 0 0 32px rgba(212, 154, 61, 0.12);
+  aspect-ratio: 4 / 4.8;
+  width: 100%;
+  max-height: min(580px, 72vh);
+  max-width: min(500px, 46vw);
+  margin-inline: auto;
+  background-color: var(--frame-matting-bg);
+  padding: 16px;
+  border: 1px solid var(--frame-gold-hairline);
+  transform-style: preserve-3d;
+  transition: border-color var(--duration-fast) ease,
+              box-shadow var(--duration-fast) ease,
+              transform var(--duration-fast) var(--ease-snappy);
+}
+
+@media (min-width: 1440px) {
+  .hero-visual-frame {
+    max-height: 640px;
+    max-width: 540px;
+    padding: 18px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-visual-frame {
+    max-height: 520px;
+    max-width: min(440px, 90vw);
+    padding: 14px;
+  }
+}
+
+@media (max-width: 540px) {
+  .hero-visual-frame {
+    max-height: 480px;
+    max-width: min(390px, 94vw);
+    padding: 12px;
+  }
+}
+
+@media (max-height: 780px) and (min-width: 1025px) {
+  .hero-visual-frame {
+    max-height: min(520px, 66vh);
+    max-width: min(460px, 38vw);
+    padding: 12px;
+  }
+}
+
+.hero-visual-frame .hero-inner-matting {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(20, 23, 19, 0.12);
+  background-color: var(--primitive-lichen-950);
+}
+
+.hero-visual-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   The Expanded 8-Specimen Florilegium Matrix
+   -------------------------------------------------------------------------- */
+.florilegium-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+@media (max-width: 1200px) {
+  .florilegium-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .florilegium-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .florilegium-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.specimen-card {
+  position: relative;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transform-style: preserve-3d;
+  transition: transform var(--duration-fast) var(--ease-snappy),
+              box-shadow var(--duration-fast) ease,
+              border-color var(--duration-fast) ease;
+  will-change: transform;
+}
+
+.specimen-card:hover {
+  border-color: rgba(212, 154, 61, 0.4);
+  box-shadow: 0 24px 50px -10px var(--card-active-glow);
+}
+
+.specimen-img-wrapper {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background-color: var(--frame-matting-bg);
+  padding: 10px;
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.specimen-inner-matting {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(20, 23, 19, 0.1);
+  background-color: var(--primitive-lichen-950);
+}
+
+.specimen-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-organic);
+}
+
+.specimen-card:hover .specimen-img {
+  transform: scale(1.06);
+}
+
+.specimen-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: rgba(250, 248, 245, 0.94);
+  backdrop-filter: blur(8px);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-xs);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  border: 1px solid var(--border-hairline);
+  z-index: 10;
+}
+
+
+.specimen-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background-color: var(--bg-surface);
+}
+
+/* --------------------------------------------------------------------------
+   Anatomical Dissection Section
+   -------------------------------------------------------------------------- */
+.anatomy-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+}
+
+@media (max-width: 960px) {
+  .anatomy-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Curatorial Manifesto Section (Split Editorial)
+   -------------------------------------------------------------------------- */
+.manifesto-editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: center;
+}
+
+@media (max-width: 960px) {
+  .manifesto-editorial-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.manifesto-image-wrapper {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-editorial);
+}
+
+.manifesto-image-wrapper.botanical-art-frame {
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  background-color: var(--frame-matting-bg);
+}
+
+.manifesto-image-wrapper.botanical-art-frame .frame-inner-matting {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(20, 23, 19, 0.12);
+}
+
+.manifesto-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+.manifesto-caption {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  background: rgba(250, 248, 245, 0.94);
+  backdrop-filter: blur(8px);
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border-hairline);
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   The Sensory Botanical Index (Ledger Table)
+   -------------------------------------------------------------------------- */
+.ledger-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.ledger-table th {
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: left;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.ledger-table td {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-hairline);
+  vertical-align: middle;
+}
+
+.ledger-row {
+  transition: background-color var(--duration-fast) ease;
+}
+
+.ledger-row:hover {
+  background-color: rgba(244, 239, 235, 0.6);
+}
+
+.ledger-specimen-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .ledger-table, .ledger-table thead, .ledger-table tbody, .ledger-table tr, .ledger-table td, .ledger-table th {
+    display: block;
+  }
+  .ledger-table thead {
+    display: none;
+  }
+  .ledger-table td {
+    padding: 0.75rem 0;
+    border-bottom: none;
+  }
+  .ledger-row {
+    border-bottom: 1px solid var(--border-hairline);
+    padding-block: 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Concierge Commission Section
+   -------------------------------------------------------------------------- */
+.concierge-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .concierge-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.concierge-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  padding: clamp(2rem, 5vw, 3.5rem);
+  box-shadow: var(--shadow-editorial);
+  border-radius: var(--radius-sm);
+}
+
+.concierge-field {
+  margin-bottom: 1.5rem;
+}
+
+.concierge-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.concierge-input {
+  width: 100%;
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0.65rem 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-primary);
+  background: transparent;
+  transition: border-color var(--duration-fast) ease;
+}
+
+.concierge-input:focus {
+  border-color: var(--accent-botanical);
+}
+
+/* --------------------------------------------------------------------------
+   Colophon Footer
+   -------------------------------------------------------------------------- */
+.footer {
+  background-color: var(--primitive-lichen-950);
+  color: var(--primitive-alabaster);
+  padding-block: clamp(4.5rem, 8vw, 7rem);
+}
+
+.footer-inner-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 860px) {
+  .footer-inner-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer-inner-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-col-head {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-pollen);
+  margin-bottom: 1.25rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-link {
+  font-size: 0.85rem;
+  color: var(--text-on-dark-muted);
+  transition: color var(--duration-fast) ease;
+}
+
+.footer-link:hover {
+  color: #FFFFFF;
+}
+
+.footer-legal-bar {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  color: var(--text-on-dark-muted);
+}
