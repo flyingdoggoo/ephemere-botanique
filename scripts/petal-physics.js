@@ -60,12 +60,12 @@ class PetalPhysics {
         x: Math.random() * this.width,
         y: Math.random() * this.height,
         size: 8 + Math.random() * 14,
-        speedY: 0.6 + Math.random() * 1.2,
-        speedX: -0.4 + Math.random() * 0.8,
+        speedY: 0.15 + Math.random() * 0.25, // Gentle, weightless downward drift
+        speedX: -0.15 + Math.random() * 0.30, // Soft horizontal breeze
         angle: Math.random() * Math.PI * 2,
-        rotationSpeed: (Math.random() - 0.5) * 0.02,
-        oscillationSpeed: 0.01 + Math.random() * 0.02,
-        oscillationDistance: 20 + Math.random() * 30,
+        rotationSpeed: (Math.random() - 0.5) * 0.006, // Slow organic tumbling
+        oscillationSpeed: 0.008 + Math.random() * 0.012,
+        oscillationDistance: 15 + Math.random() * 20,
         color: this.colors[Math.floor(Math.random() * this.colors.length)],
         seed: Math.random() * 100
       });
@@ -93,9 +93,9 @@ class PetalPhysics {
     this.ctx.clearRect(0, 0, this.width, this.height);
 
     for (let p of this.petals) {
-      // Natural sway
+      // Natural gentle sway
       p.seed += p.oscillationSpeed;
-      p.x += p.speedX + Math.sin(p.seed) * 0.6;
+      p.x += p.speedX + Math.sin(p.seed) * 0.35;
       p.y += p.speedY;
       p.angle += p.rotationSpeed;
 
@@ -105,8 +105,8 @@ class PetalPhysics {
       const dist = Math.hypot(dx, dy);
       if (dist < 120 && dist > 0) {
         const force = (120 - dist) / 120;
-        p.x += (dx / dist) * force * 4;
-        p.y += (dy / dist) * force * 4;
+        p.x += (dx / dist) * force * 1.5;
+        p.y += (dy / dist) * force * 1.5;
       }
 
       // Recycle petals at screen boundaries
