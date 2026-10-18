@@ -1,8 +1,9 @@
 /**
  * ÉPHÉMÈRE AMBIENT PETAL PHYSICS
  * Lightweight, organic Canvas particle simulation.
- * Petals drift on a sinusoidal breeze and gently part as the mouse moves.
- * Strictly respects prefers-reduced-motion.
+ * Petals drift at a STRICTLY CONSTANT, serene speed (zero acceleration over time).
+ * Uses delta-time normalization (identical speed across 60Hz, 120Hz, and 144Hz displays).
+ * Strictly prevents duplicate RAF loop stacking.
  */
 
 class PetalPhysics {
@@ -17,23 +18,25 @@ class PetalPhysics {
 
     this.ctx = this.canvas.getContext('2d');
     this.petals = [];
-    this.petalCount = window.innerWidth < 768 ? 14 : 26;
+    this.petalCount = window.innerWidth < 768 ? 14 : 24;
 
-    this.mouse = { x: -1000, y: -1000, vx: 0, vy: 0 };
-    this.lastMouse = { x: -1000, y: -1000 };
+    this.mouse = { x: -1000, y: -1000 };
+    this.rafId = null;
+    this.lastTimestamp = 0;
+    this.isRunning = false;
 
     this.colors = [
-      'rgba(138, 42, 60, 0.45)',  /* Peony crimson */
-      'rgba(92, 26, 38, 0.35)',   /* Deep velvet */
-      'rgba(232, 204, 210, 0.55)', /* Rose blush */
-      'rgba(212, 154, 61, 0.30)', /* Saffron pollen gold */
-      'rgba(244, 239, 235, 0.60)'  /* Chalk cream */
+      'rgba(138, 42, 60, 0.40)',   /* Peony crimson */
+      'rgba(92, 26, 38, 0.30)',    /* Deep velvet */
+      'rgba(232, 204, 210, 0.50)',  /* Rose blush */
+      'rgba(212, 154, 61, 0.25)',  /* Saffron pollen gold */
+      'rgba(244, 239, 235, 0.55)'   /* Chalk cream */
     ];
 
     this.resize();
     this.initPetals();
     this.bindEvents();
-    this.animate();
+    this.start();
   }
 
   resize() {
@@ -42,14 +45,19 @@ class PetalPhysics {
   }
 
   bindEvents() {
-    window.addEventListener('resize', () => this.resize());
+    window.addEventListener('resize', () => this.resize(), { passive: true });
+
     window.addEventListener('mousemove', (e) => {
-      this.mouse.vx = e.clientX - this.lastMouse.x;
-      this.mouse.vy = e.clientY - this.lastMouse.y;
       this.mouse.x = e.clientX;
       this.mouse.y = e.clientY;
-      this.lastMouse.x = e.clientX;
-      this.lastMouse.y = e.clientY;
+    }, { passive: true });
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        this.stop();
+      } else {
+        this.start();
+      }
     });
   }
 
@@ -59,15 +67,15 @@ class PetalPhysics {
       this.petals.push({
         x: Math.random() * this.width,
         y: Math.random() * this.height,
-        size: 8 + Math.random() * 14,
-        speedY: 0.15 + Math.random() * 0.25, // Gentle, weightless downward drift
-        speedX: -0.15 + Math.random() * 0.30, // Soft horizontal breeze
+        size: 9 + Math.random() * 12,
+        // STRICT CONSTANT VELOCITY (never accelerates or grows with time)
+        speedY: 0.22 + Math.random() * 0.18, // Constant vertical rate (~0.3px per 60Hz frame)
+        speedX: -0.10 + Math.random() * 0.20, // Constant horizontal drift
         angle: Math.random() * Math.PI * 2,
-        rotationSpeed: (Math.random() - 0.5) * 0.006, // Slow organic tumbling
-        oscillationSpeed: 0.008 + Math.random() * 0.012,
-        oscillationDistance: 15 + Math.random() * 20,
-        color: this.colors[Math.floor(Math.random() * this.colors.length)],
-        seed: Math.random() * 100
+        rotationSpeed: (Math.random() - 0.5) * 0.005, // Constant gentle tumble
+        oscillationPhase: Math.random() * Math.PI * 2,
+        oscillationSpeed: 0.01 + Math.random() * 0.01,
+        color: this.colors[Math.floor(Math.random() * this.colors.length)]
       });
     }
   }
@@ -89,49 +97,69 @@ class PetalPhysics {
     this.ctx.restore();
   }
 
-  animate() {
+  start() {
+    if (this.isRunning) return;
+    this.isRunning = true;
+    this.lastTimestamp = performance.now();
+    this.rafId = requestAnimationFrame((ts) => this.tick(ts));
+  }
+
+  stop() {
+    this.isRunning = false;
+    if (this.rafId) {
+      cancelAnimationFrame(this.rafId);
+      this.rafId = null;
+    }
+  }
+
+  tick(timestamp) {
+    if (!this.isRunning) return;
+
+    // Delta time normalization (capped at 50ms to prevent jumps after background tab return)
+    const elapsed = timestamp - this.lastTimestamp;
+    this.lastTimestamp = timestamp;
+    const timeScale = Math.min(Math.max(elapsed / 16.667, 0.5), 3.0);
+
     this.ctx.clearRect(0, 0, this.width, this.height);
 
     for (let p of this.petals) {
-      // Natural gentle sway
-      p.seed += p.oscillationSpeed;
-      p.x += p.speedX + Math.sin(p.seed) * 0.35;
-      p.y += p.speedY;
-      p.angle += p.rotationSpeed;
+      // 1. Strictly constant linear vertical motion scaled by time
+      p.y += p.speedY * timeScale;
 
-      // Soft mouse deflection
+      // 2. Controlled bounded sinusoidal sway (bounded between -0.3px and +0.3px)
+      p.oscillationPhase = (p.oscillationPhase + p.oscillationSpeed * timeScale) % (Math.PI * 2);
+      p.x += (p.speedX + Math.sin(p.oscillationPhase) * 0.3) * timeScale;
+
+      // 3. Constant linear rotation
+      p.angle = (p.angle + p.rotationSpeed * timeScale) % (Math.PI * 2);
+
+      // 4. Soft mouse deflection (spring return)
       const dx = p.x - this.mouse.x;
       const dy = p.y - this.mouse.y;
       const dist = Math.hypot(dx, dy);
-      if (dist < 120 && dist > 0) {
-        const force = (120 - dist) / 120;
-        p.x += (dx / dist) * force * 1.5;
-        p.y += (dy / dist) * force * 1.5;
+      if (dist < 100 && dist > 0) {
+        const force = (100 - dist) / 100;
+        p.x += (dx / dist) * force * 1.2 * timeScale;
+        p.y += (dy / dist) * force * 1.2 * timeScale;
       }
 
-      // Recycle petals at screen boundaries
-      if (p.y > this.height + 30) {
-        p.y = -30;
+      // 5. Seamless boundary wrap without speed mutation
+      if (p.y > this.height + 25) {
+        p.y = -25;
         p.x = Math.random() * this.width;
       }
-      if (p.x < -30) p.x = this.width + 30;
-      if (p.x > this.width + 30) p.x = -30;
+      if (p.x < -25) p.x = this.width + 25;
+      if (p.x > this.width + 25) p.x = -25;
 
       this.drawPetal(p);
     }
 
-    if (!document.hidden) {
-      requestAnimationFrame(() => this.animate());
-    }
+    this.rafId = requestAnimationFrame((ts) => this.tick(ts));
   }
 }
 
-document.addEventListener('visibilitychange', () => {
-  if (!document.hidden && window.petalSimulation) {
-    window.petalSimulation.animate();
-  }
-});
-
 document.addEventListener('DOMContentLoaded', () => {
-  window.petalSimulation = new PetalPhysics();
+  if (!window.petalSimulation) {
+    window.petalSimulation = new PetalPhysics();
+  }
 });
